@@ -1,0 +1,481 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#123661"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="STC Logistics"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><title>STC LOGISTICS — Gestionale aziendale</title><style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#142b48;background:#f3f7fb}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:12px 17px;font-weight:700;min-height:44px}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #62cba7}button.primary{background:#ad123b;color:#fff}button.alt{background:#edf0fa;color:#24377e}button.danger{background:#ffebed;color:#a02d3a}input,select,textarea{width:100%;min-height:46px;padding:10px 12px;border:1px solid #cbd8e3;border-radius:10px;background:white;color:#162c48}textarea{min-height:90px}label{display:block;font-size:13px;font-weight:650;color:#425973}label input,label select,label textarea{margin-top:6px;font-size:16px;font-weight:450}h1{font-size:27px;margin:0 0 6px}h2{font-size:20px;margin:0 0 16px}h3{font-size:16px;margin:0 0 10px}p{line-height:1.5}.muted{color:#65798d}.layout{display:flex;min-height:100dvh}.sidebar{overflow-y:auto;width:246px;background:linear-gradient(180deg,#13296a,#263b82);padding:20px 14px;color:white;position:sticky;top:0;height:100dvh;flex-shrink:0}.brand{display:flex;align-items:center;gap:11px;margin:3px 7px 28px;font-weight:850}.brand img{width:52px;height:52px;border-radius:14px}.brand small{display:block;font-size:11px;font-weight:500;color:#b8dfd9}.nav{display:grid;gap:5px}.nav button{background:transparent;color:#d8eeeb;text-align:left}.nav button.active{background:#ffffff25;color:white}.body{flex:1;min-width:0}.top{height:72px;background:white;border-bottom:1px solid #e1e9f1;padding:14px 30px;display:flex;align-items:center;justify-content:space-between}.top img{width:39px;height:39px;border-radius:11px}.content{max-width:1380px;margin:auto;padding:28px 30px 100px}.view{display:none}.view.active{display:block}.card{background:white;border:1px solid #e0e8ef;border-radius:18px;padding:22px;box-shadow:0 5px 22px #173f5910;margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}.span3{grid-column:span 3}.span4{grid-column:span 4}.span6{grid-column:span 6}.span8{grid-column:span 8}.span12{grid-column:span 12}.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.wide{grid-column:span 2}.full{grid-column:1/-1}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.stat{font-size:32px;font-weight:850;color:#24377e}.note{background:#edf2fc;border:1px solid #c3e7d7;border-radius:12px;padding:14px;color:#175a4b;margin-bottom:20px}.warn{background:#fff4de;color:#775117;border-color:#f4d7a2}.ship{border:1px solid #d7e3e9;border-radius:15px;padding:18px;margin-bottom:15px;background:#fbfdfe}.item{padding:13px;border:1px dashed #c3d7d8;border-radius:12px;margin:10px 0;background:#fff}.result{margin-top:12px;background:#edf2fc;padding:13px;border-radius:10px;font-weight:750}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:600px}td,th{padding:12px;border-bottom:1px solid #e7edf1;text-align:left;font-size:13px}th{background:#f4f8fa;color:#53687a}.hidden{display:none!important}.mobileNav{display:none}.pill{border-radius:100px;background:#e8f6ef;color:#136553;padding:6px 10px;font-size:12px;font-weight:750}.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#0e3452;color:white;padding:13px 19px;border-radius:12px;display:none;z-index:99;max-width:90vw}.logohero{display:flex;gap:22px;align-items:center}.logohero img{width:112px;border-radius:26px;box-shadow:0 8px 28px #12366120}.foot{margin-top:25px;font-size:12px;color:#778ba0}@media(max-width:1050px){.sidebar{width:200px}.span3{grid-column:span 6}.span8,.span4{grid-column:span 12}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){.sidebar{display:none}.top{padding:12px 16px;height:64px}.content{padding:18px 13px 105px}.card{padding:16px;border-radius:15px}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.span3,.span4,.span6,.span8,.span12{grid-column:span 12}.grid{gap:9px}.mobileNav{display:flex;position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #dae4eb;z-index:40;justify-content:space-around;padding:7px 2px max(8px,env(safe-area-inset-bottom))}.mobileNav button{background:white;font-size:10px;padding:7px 3px;min-width:0;display:grid;gap:4px;justify-items:center}.mobileNav b{font-size:19px}.mobileNav button.active{color:#08765e}.logohero img{width:77px;border-radius:17px}.logohero h1{font-size:23px}.ship{padding:12px}h1{font-size:24px}.row button{flex-grow:0}}
+ .bars{display:flex;align-items:end;gap:12px;min-height:125px;margin-top:12px}.barGroup{flex:1;min-width:0;text-align:center}.barPair{height:96px;display:flex;align-items:end;gap:3px;justify-content:center}.barPair i{width:18px;max-width:45%;border-radius:4px 4px 0 0;background:#263b82;display:block}.barPair i.cost{background:#bf2048}.barGroup small{font-size:10px;color:#64748b}.stat{overflow-wrap:anywhere} .logohero img{object-fit:contain;background:#fff} 
+/* STC v1.2: responsive auth, dashboard widgets and role-specific presentation */
+.app-locked .layout,.app-locked .mobileNav{display:none!important}
+#authGate{display:none;min-height:100dvh;align-items:center;justify-content:center;background:radial-gradient(circle at top left,#27428e,#0c1d42 62%,#09162d);padding:22px}
+.app-locked #authGate{display:flex}
+.authPanel{width:min(100%,445px);background:white;border-radius:22px;padding:26px;box-shadow:0 24px 60px #09162d70;color:#18345b}
+.authPanel img{display:block;width:96px;height:96px;object-fit:contain;margin:0 auto 13px;border-radius:18px}
+.authPanel h1{text-align:center;margin:0 0 5px;color:#253876;font-size:26px}
+.authPanel p{font-size:13px;color:#556579;margin:7px 0 17px}
+.authPanel label{margin:12px 0}.authPanel button{width:100%;margin-top:13px}
+.authPanel .disclaimer{font-size:12px;background:#fff2df;border-radius:12px;padding:10px;color:#65451e;line-height:1.5}
+.hidden{display:none!important}
+.top-user{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.top-user button{padding:8px 10px;min-height:34px;font-size:12px}
+.user-chip{background:#ecf1ff;border-radius:30px;padding:8px 11px;color:#273b77;font-weight:700;font-size:12px}
+.widget-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0 20px}
+.widget{background:white;border:1px solid #e1e6f0;border-radius:16px;padding:18px;box-shadow:0 5px 18px #173f5910;min-width:0}
+.widget h3{font-size:13px;color:#67758d;margin-bottom:11px;display:flex;align-items:center;gap:7px}
+.widget .big{font-size:30px;font-weight:850;letter-spacing:-1px;color:#24397f;line-height:1.2}
+.widget .digital{font-variant-numeric:tabular-nums;font-size:clamp(27px,3vw,38px)}
+.widget small{display:block;margin-top:7px;line-height:1.4;color:#687b8e;font-size:11px}
+.widget .row{margin-top:9px}.widget input,.widget select{min-height:38px;font-size:14px}.widget button{min-height:36px;padding:7px 12px;font-size:12px}
+.widget .weather-icon{font-size:28px;margin-right:8px}.widget .muted{font-size:12px}
+.weather-prompt{display:flex;gap:6px;align-items:end}
+.weather-prompt label{flex:1}
+.widget a{color:#253b82;font-weight:600;font-size:11px}
+.adminBanner{padding:12px 14px;border-radius:12px;background:#eff2fc;color:#2e4376;margin:12px 0;font-size:13px}
+.userList{display:grid;gap:10px}.userLine{padding:13px;border:1px solid #e0e8f0;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.userLine .userMeta{font-size:12px;color:#718198;margin-top:5px}
+body.operator [data-page="admin"],body.operator [data-page="ledger"],body.operator [data-page="tariffs"],body.operator [data-page="settings"],body.operator .finance-only,body.operator .admin-only{display:none!important}
+@media(max-width:1020px){.widget-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.widget:first-child{grid-column:span 2}}
+@media(max-width:700px){.mobileNav{overflow-x:auto;justify-content:flex-start;scrollbar-width:none}.mobileNav button{flex:0 0 62px}.widget-grid{grid-template-columns:1fr}.widget:first-child{grid-column:auto}.authPanel{padding:21px}.widget .big{font-size:29px}.top-user .user-chip{max-width:155px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.top-user button{padding:7px}.top{height:auto;min-height:64px}}
+
+/* STC v1.3 · Calcolatrice rapida, responsive tablet/telefono */
+.fast-intro{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:16px}.fast-intro h1{color:#172e65;margin:5px 0}.fast-intro p{color:#64748b;margin:6px 0;line-height:1.45}.fast-eyebrow{color:#7b87a0;font-size:11px;font-weight:800;letter-spacing:.08em}.fast-note{margin-bottom:17px}.fast-ship{background:#fff;border:1px solid #dfe6f0;border-radius:18px;padding:20px;margin-bottom:17px;box-shadow:0 4px 20px #1c2f5410}.fast-ship h3{font-size:19px}.fast-inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:17px 0}.fast-groups-title{display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap;margin:12px 0}.fast-group{border:1px solid #dbe5ef;background:#f7f9fd;border-radius:13px;padding:13px;margin-bottom:10px}.fast-group>.row{margin-bottom:10px}.fast-dimensions{display:grid;grid-template-columns:.65fr 1fr 1fr 1fr;gap:10px}.fast-extras{border-top:1px solid #e4eaf1;margin-top:15px;padding-top:14px}.fast-extras>summary{cursor:pointer;font-size:14px;color:#253b82;font-weight:750;padding:5px}.fast-extras>.fast-inputs{grid-template-columns:repeat(2,minmax(0,1fr))}.fast-output{margin-top:16px;border-top:1px solid #e3e9ef;padding-top:14px}.fast-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.fast-facts>div{background:#f2f5fb;border-radius:10px;padding:11px;min-width:0}.fast-facts span{color:#64748b;font-size:12px;display:block}.fast-facts strong{font-size:17px;color:#243b80;display:block;margin-top:4px;overflow-wrap:anywhere}.fast-facts small{font-size:12px}.fast-driver{margin:14px 0;background:#eaf5f1;color:#245c4f;border-radius:10px;padding:11px;font-size:13px}.fast-lines{display:grid;gap:9px;font-size:13px;color:#41536b}.fast-lines>div{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.fast-lines>div>*:last-child{text-align:right}.fast-amount{border-top:1px solid #dfe7ef;margin-top:13px;padding:14px 0 0;display:flex;justify-content:space-between;align-items:center;gap:10px}.fast-amount span{font-size:13px;color:#52657a}.fast-amount strong{font-size:26px;color:#203778;white-space:nowrap}.fast-warning{background:#fff1e3;color:#8c5418;border-radius:10px;padding:12px;margin-top:13px;font-weight:650}.fast-summary{display:flex;align-items:center;justify-content:space-between;gap:14px}.fast-summary h2{margin:4px 0}.fast-summary p{margin:0}.fast-summary>div:last-child{display:flex;align-items:end;flex-direction:column}.fast-grand{font-size:32px;white-space:nowrap;color:#173978}.fast-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 20px}.fast-toolbar button:disabled{opacity:.45;cursor:not-allowed}.fast-caption{font-size:12px;line-height:1.6}.mobileMore{display:none}
+@media(max-width:1050px){.fast-inputs{grid-template-columns:repeat(2,minmax(0,1fr))}.fast-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.fast-ship{padding:14px}.fast-inputs{grid-template-columns:1fr}.fast-dimensions{grid-template-columns:repeat(2,minmax(0,1fr))}.fast-extras>.fast-inputs{grid-template-columns:1fr}.fast-facts strong{font-size:15px}.fast-amount strong{font-size:23px}.fast-summary{align-items:flex-start}.fast-grand{font-size:23px}.fast-toolbar button{flex:1}.content{padding-bottom:165px}.mobileNav{bottom:calc(42px + env(safe-area-inset-bottom));padding:5px 3px;z-index:9999;box-shadow:0 2px 16px #142b4825}.mobileNav button{font-size:11px;min-height:49px;flex:1;max-width:25%}.mobileNav b{font-size:22px}.mobileMore:not([hidden]){position:fixed;bottom:calc(108px + env(safe-area-inset-bottom));right:10px;left:10px;z-index:9998;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px;background:white;border:1px solid #dbe4ee;border-radius:16px;box-shadow:0 12px 32px #0d24433d}.mobileMore button{background:#f3f6fa;color:#223a70;text-align:left;font-size:14px}.toast{bottom:calc(115px + env(safe-area-inset-bottom))}}
+
+/* STC 1.4: suggerimenti destinazione, touch friendly, nessun overflow */
+.geo-archive-note{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;border:1px solid #dae3f1;border-radius:12px;padding:11px 13px;background:#f7f9ff;margin-bottom:14px;font-size:12px;color:#445c7e}
+.geo-archive-note button{font-size:12px;min-height:36px;padding:8px 10px}
+.geo-field{position:relative;min-width:0}
+.geo-hint{display:block;margin-top:7px;color:#25614f;font-size:12px;font-weight:600;line-height:1.45}
+.geo-hint.geo-warning{color:#9a3b20}
+.geo-suggestions:empty{display:none}
+.geo-suggestions{position:absolute;z-index:20;top:76px;left:0;right:0;background:white;border:1px solid #bdcce2;box-shadow:0 12px 32px #172c4c28;border-radius:12px;max-height:240px;overflow-y:auto;display:grid;gap:0}
+.geo-suggestions button{display:grid;gap:3px;min-height:51px;text-align:left;background:white;color:#172b45;border-radius:0;border-bottom:1px solid #e8edf6;padding:9px 12px;font-size:14px}
+.geo-suggestions button:hover,.geo-suggestions button:focus{background:#edf2ff}
+.geo-suggestions span{color:#62758f;font-weight:500;font-size:12px}
+@media(max-width:700px){.geo-suggestions{top:78px}.geo-archive-note{align-items:flex-start}}
+.recipient-suggestions{display:flex;flex-direction:column;align-items:stretch;gap:5px;margin-top:6px;max-height:200px;overflow:auto}.recipient-suggestions:empty{display:none}.recipient-suggestions button{text-align:left;white-space:normal;min-height:39px}.ship .muted{font-size:12px;display:block;margin-top:5px}.manual-quote-price{margin:16px 0;border:1px solid #b8d2e8;background:#f7fbff;border-radius:15px;padding:16px}.manual-quote-price h3{margin:0 0 8px}.manual-quote-price input{font-size:17px;min-height:46px}.manual-quote-price .muted{line-height:1.5}
+</style><style>
+.tariff-history-item{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid #e5eaf1}.tariff-history-item strong{min-width:150px}.tariff-history-item span{color:#64748b;font-size:12px;flex:1}.tariff-history-item button{font-size:12px}#tariffEditFields label{min-width:0}#tariffEditBox{scroll-margin-top:25px}#tariffEditError:not(:empty){color:#a02d3a}
+</style><style>
+.mobile-top-brand{display:flex;align-items:center;gap:11px}.mobile-top-brand img{display:none;width:42px;height:42px;object-fit:contain}.brand img{object-fit:contain;border-radius:0}.brand{gap:9px}.brand img{width:74px;height:74px;flex:0 0 auto}.logohero{display:block}.logohero>div{width:100%}
+@media(max-width:700px){.mobile-top-brand img{display:block;width:48px;height:48px}.top{height:70px}.top .row{margin-left:auto}}
+</style><style>
+.fast-volume-mode{margin:14px 0 10px;padding:12px;border:1px solid #d8e3ec;border-radius:14px;background:#f7fafc;display:flex;flex-wrap:wrap;gap:12px}
+.fast-volume-mode legend{padding:0 6px;font-size:14px}.fast-volume-mode label{display:flex;align-items:center;gap:8px;background:white;border:1px solid #cfdce7;border-radius:12px;padding:10px 12px;cursor:pointer;min-height:44px;font-weight:600}
+.fast-volume-mode input{width:19px;height:19px;accent-color:#1763a4;margin:0}
+.fast-direct-volume{padding:14px;border-radius:14px;border:1px solid #cfdce7;background:#f5faff;margin-bottom:12px}
+.fast-direct-volume label{display:block;max-width:430px;font-weight:700}.fast-direct-volume input{display:block;width:100%;font-size:20px;padding:12px;margin-top:7px}
+.fast-direct-volume small{display:block;margin-top:8px;color:#526a7e;line-height:1.45}.fast-direct-volume input{max-width:360px}.fast-direct-volume input:focus{border-color:#216ac5}
+</style><style>
+/* STC 1.13 — ricerca con suggerimenti integrati, touch e offline */
+.quote-search-panel{margin:9px 0 16px;padding:16px;border:1px solid #bcd5ec;background:#f3f8ff;border-radius:15px}
+.quote-search-label{font-weight:750;font-size:15px;display:block}
+.quote-search-label input{display:block;width:100%;margin:8px 0 0;min-height:47px;font-size:16px}
+.quote-search-note{margin-top:9px;font-size:12px;color:#4c607d;line-height:1.5}
+.quote-dest-results{display:grid;gap:0;max-height:265px;overflow-y:auto;position:relative;z-index:12;background:#fff;border:1px solid #c8d8e9;border-radius:12px;box-shadow:0 8px 18px #192a4617;margin-top:5px}
+.quote-dest-results:empty{display:none}
+.quote-dest-results button{border:0;border-bottom:1px solid #e5ebf4;border-radius:0;min-height:54px;background:#fff;padding:10px 12px;text-align:left;display:grid;align-content:center;gap:4px;font-size:14px;color:#1a3356;white-space:normal}
+.quote-dest-results button:focus,.quote-dest-results button:hover{background:#edf4ff}
+.quote-dest-results span{color:#5c6e82;font-size:12px;font-weight:500}
+.ship label.geo-field{display:block;min-width:0}
+@media(max-width:700px){.quote-search-panel{padding:12px}.quote-dest-results{max-height:235px}}
+</style><style>
+
+/* STC LOGISTICS 1.16 — calendario operativo integrato, mobile-first */
+.widget-grid:has(+ .calendar-panel){grid-template-columns:repeat(2,minmax(0,1fr))}
+.fuel-below-calendar{grid-template-columns:1fr;max-width:610px;margin-top:4px}
+.calendar-panel{padding:19px 20px;margin:18px 0 18px}
+.calendar-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.calendar-heading h2{font-size:22px;margin:4px 0 4px;color:#19346c}
+.calendar-heading p{font-size:13px;margin:0 0 13px;max-width:650px}
+.calendar-eyebrow{color:#74849b;font-size:10px;letter-spacing:1.1px;font-weight:900}
+.calendar-nav{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.calendar-nav button{padding:8px 12px;min-height:37px}
+.calendar-nav strong{min-width:145px;text-align:center;text-transform:capitalize;color:#17346e}
+.calendar-legend{display:flex;gap:16px;flex-wrap:wrap;padding:12px 0;border-top:1px solid #eef1f6;font-size:12px;color:#5a6c81}
+.calendar-legend span{display:flex;gap:6px;align-items:center}.cal-dot{display:inline-block;width:10px;height:10px;border-radius:99px}
+.cal-run{background:#1a815d}.cal-accept{background:#1a815d}.cal-wait{background:#dea82d}.cal-decline{background:#9aa3b2}
+.calendar-highlights{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.calendar-highlights span{font-size:12px;background:#eff4fa;color:#345174;padding:7px 10px;border-radius:9px}
+.calendar-scroll{overflow-x:auto;overscroll-behavior-x:contain}
+.calendar-weekdays,.calendar-month{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));min-width:690px;gap:5px}
+.calendar-weekdays{margin-bottom:5px}.calendar-weekdays span{text-align:center;padding:8px 0;font-size:12px;font-weight:850;color:#63748c}
+.calendar-day{min-height:126px;border:1px solid #e2e9f2;border-radius:12px;padding:6px;background:#fbfcff;min-width:0}
+.calendar-day.outside{background:#f3f5f8;opacity:.56}.calendar-day.today{border:2px solid #2c6bc5;padding:5px;background:#f0f6ff}
+.calendar-day-head{display:flex;justify-content:space-between;align-items:center;padding:1px 3px 6px;color:#71839c;font-size:11px}
+.calendar-day-head strong{font-size:13px;color:#243956}
+.cal-entry{display:block;width:100%;min-height:34px;text-align:left;border-radius:7px;padding:6px 7px;margin:3px 0 0;border-left:4px solid transparent;font-size:11px;font-weight:700;line-height:1.3;overflow-wrap:anywhere;white-space:normal}
+.cal-entry small{font-weight:500;font-size:10px;display:block;margin-top:2px;opacity:.84}
+.cal-entry.run{background:#e4f0ff;color:#17538a;border-left-color:#2468b2}
+.cal-entry.accepted{background:#e2f4eb;color:#146444;border-left-color:#1a815d}
+.cal-entry.waiting{background:#fff4d7;color:#79550c;border-left-color:#dea82d}
+.cal-entry.declined{background:#e9ebef;color:#667080;border-left-color:#9aa3b2;text-decoration:none;opacity:.83}
+.cal-entry:hover,.cal-entry:focus-visible{filter:brightness(.97);outline:2px solid #729ce0;outline-offset:1px}
+.calendar-undated:not(:empty){margin:12px 0 0;padding:12px;background:#fff8e9;border:1px solid #eeddb8;border-radius:10px;font-size:12px}
+.calendar-undated button{font-size:12px;min-height:35px;padding:6px 10px}
+.calendar-detail{border:0;border-radius:19px;max-width:min(680px,94vw);width:100%;max-height:86dvh;overflow:auto;padding:20px 22px;color:#19304d;box-shadow:0 22px 70px #0f213f66}
+.calendar-detail::backdrop{background:#071b35aa}
+.calendar-modal-header{display:flex;gap:15px;align-items:center;justify-content:space-between;border-bottom:1px solid #e2e8f2;padding-bottom:9px}
+.calendar-modal-header h2{margin:0}
+.calendar-modal-footer{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;border-top:1px solid #e2e8f2;padding-top:15px}
+.calendar-modal-footer button{font-size:13px}
+.cal-detail-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.cal-detail-summary>div{background:#f2f6fa;padding:11px;border-radius:10px}
+.cal-detail-summary span{display:block;font-size:11px;color:#65758a}
+.cal-detail-summary strong{display:block;margin-top:3px;font-size:15px}
+.cal-detail-ship{border:1px solid #e5ebf2;padding:12px;border-radius:11px;margin:8px 0;font-size:13px}
+.cal-detail-ship strong{color:#1e4179}
+.cal-detail-ship p{margin:4px 0;font-size:12px;color:#637187}
+.calendar-quick-save{border:1px solid #bcd6ec;background:#f6fbff}
+.calendar-quick-save h3{color:#234579;margin:0 0 5px}
+.calendar-quick-save p{font-size:13px;margin:0 0 12px}
+.calendar-quick-fields{display:grid;grid-template-columns:minmax(155px,1fr) minmax(155px,1.4fr) auto;gap:12px;align-items:end}
+.calendar-quick-fields button{height:46px}
+@media(max-width:820px){.calendar-quick-fields{grid-template-columns:1fr 1fr}.calendar-quick-fields button{grid-column:1/-1}}
+@media(max-width:700px){.widget-grid:has(+ .calendar-panel){grid-template-columns:1fr}.calendar-panel{padding:12px;margin-bottom:14px}.calendar-heading h2{font-size:20px}.calendar-nav{width:100%;justify-content:flex-start}.calendar-nav strong{min-width:120px}.calendar-detail{padding:15px;max-height:83dvh}.cal-detail-summary{grid-template-columns:1fr 1fr}.calendar-quick-fields{grid-template-columns:1fr}.calendar-quick-fields button{grid-column:auto}.calendar-day{min-height:100px}}
+
+</style><style>
+.ent-side-widgets{margin-top:24px;display:grid;gap:10px}.ent-side-widgets .widget{padding:10px;background:#ffffff12;border-color:#ffffff27;color:white;box-shadow:none}.ent-side-widgets .widget h3,.ent-side-widgets .widget small{color:#d5e4ff}.ent-side-widgets .widget .big{color:white;font-size:21px}.ent-side-widgets .widget .digital{font-size:26px}.ent-side-widgets .weather-icon{font-size:19px}.ent-side-widgets label{color:#f3f5ff}.ent-side-widgets .weather-prompt{display:block}.ent-side-widgets .weather-prompt button{margin-top:6px;width:100%}.ent-side-widgets .weather-prompt input{min-width:0}.ent-side-widgets .widget #weatherDetail{overflow-wrap:anywhere}
+.ent-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:10px}.ent-cards button{text-align:left;color:#213a72;background:white;border:1px solid #dce5ee;font-size:13px;min-height:78px}.ent-cards b{font-size:23px;display:block}.ent-line{border-bottom:1px solid #e3ebf1;padding:12px 0;display:flex;justify-content:space-between;gap:12px;align-items:center}.ent-line small{color:#65798d}.ent-check{display:flex;align-items:center;gap:12px;background:#f4f7fb;border-radius:12px;padding:11px;margin:6px 0;font-size:14px}.ent-check input{width:20px;min-height:20px;flex-shrink:0}.ent-mail-text{white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto;font:14px system-ui;color:#203a57}.ent-side-widgets .widget a{color:white}
+@media(max-width:1050px){.ent-cards{grid-template-columns:repeat(2,1fr)}.ent-side-widgets .widget .digital{font-size:19px}}
+@media(max-width:700px){.ent-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.ent-side-widgets{display:none}.ent-line{flex-wrap:wrap}}
+</style><style>
+/* V1.19: navigazione compatta senza modificare viste o calcoli */
+.stc-brand-home{margin:0 0 18px;padding:6px 7px;width:100%;height:auto;min-height:64px;text-align:left;background:transparent;color:#fff;border-radius:12px;display:flex;align-items:center;gap:11px;font-weight:850}
+.stc-brand-home img{width:48px;height:48px;object-fit:contain;flex-shrink:0;border-radius:0}
+.stc-brand-home span{display:block;min-width:0;font-size:13px;line-height:1.25}
+.stc-brand-home small{display:block;font-size:10px;font-weight:500;color:#b8dfd9;margin-top:3px}
+.stc-brand-home:hover,.stc-brand-home:focus-visible{background:#ffffff18}
+#nav{display:flex;flex-direction:column;gap:5px;align-items:stretch}
+#nav .stc-nav-heading{font-size:10px;font-weight:800;letter-spacing:.12em;color:#b9ccec;padding:6px 10px 7px}
+#nav button.stc-nav-link{display:flex;gap:10px;align-items:center;min-height:43px;padding:9px 10px;border-radius:11px;font-size:13px;font-weight:700;width:100%;color:#e8f0ff;background:transparent;text-align:left;line-height:1.2}
+#nav button.stc-nav-link:hover{background:#ffffff16}
+#nav button.stc-nav-link.active{background:#ffffff2a;color:#fff;box-shadow:inset 3px 0 0 #c1e9ff}
+#nav .stc-nav-icon{display:inline-flex;width:21px;flex-shrink:0;align-items:center;justify-content:center;font-size:16px}
+#nav .stc-nav-divider{height:1px;margin:11px 7px 6px;background:#ffffff30}
+#nav details.stc-nav-group{border-radius:12px;overflow:hidden;border:1px solid transparent}
+#nav details.stc-nav-group[open]{background:#061b4c38;border-color:#ffffff12}
+#nav details.stc-nav-group[hidden]{display:none!important}
+#nav summary{cursor:pointer;list-style:none;min-height:45px;padding:11px 10px;display:flex;justify-content:space-between;align-items:center;gap:8px;border-radius:11px;color:#fff;font-size:13px;font-weight:800;user-select:none}
+#nav summary::-webkit-details-marker{display:none}
+#nav summary::marker{content:''}
+#nav summary:hover{background:#ffffff14}
+#nav summary:focus-visible{outline:3px solid #62cba7}
+#nav .stc-nav-chevron{font-size:17px;color:#d6ebff;transition:transform .15s}
+#nav details[open] .stc-nav-chevron{transform:rotate(180deg)}
+#nav .stc-nav-children{display:grid;gap:2px;margin:0 5px 6px 8px;padding-left:7px;border-left:1px solid #ffffff35}
+#nav .stc-nav-children button.stc-nav-link{font-size:12px;min-height:40px;padding:8px 8px;font-weight:650}
+.stc-quick-entry{display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid #cad9eb;background:linear-gradient(110deg,#fff,#eef4ff);padding:18px 22px}
+.stc-quick-entry h2{margin:3px 0 4px;font-size:22px;color:#1d3672}
+.stc-quick-entry p{margin:0;font-size:13px}
+.stc-quick-eyebrow{font-size:10px;font-weight:850;letter-spacing:.1em;color:#536f9b}
+.stc-quick-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.stc-quick-actions button{font-size:13px;min-height:44px;padding:10px 13px}
+#operationalCalendar{scroll-margin-top:16px}
+.stc-mobile-more-title{font-weight:850;color:#173a68;padding:7px 10px;font-size:13px}
+#mobileMore details.stc-nav-group{border-top:1px solid #e5eaf3;padding:2px 0}
+#mobileMore details.stc-nav-group summary{font-size:14px;font-weight:800;color:#1c3764;min-height:45px;display:flex;justify-content:space-between;padding:12px 14px;list-style:none;cursor:pointer}
+#mobileMore details.stc-nav-group summary::-webkit-details-marker{display:none}
+#mobileMore .stc-nav-children{padding-left:12px;display:grid}
+#mobileMore button.stc-nav-link{width:100%;text-align:left;display:flex;gap:9px;align-items:center;min-height:43px;padding:9px 14px;background:transparent;color:#1d3b67;font-weight:700}
+#mobileMore .stc-nav-icon{width:22px;text-align:center}
+@media(max-width:700px){#mobileMore.mobileMore:not([hidden]){grid-template-columns:1fr;max-height:62dvh;overflow-y:auto;overscroll-behavior:contain;gap:2px;padding:10px}#mobileMore .stc-nav-children{gap:2px}#mobileMore details.stc-nav-group summary{min-height:48px}#mobileMore button.stc-nav-link{min-height:45px}}
+@media(max-width:1050px){.stc-brand-home span{font-size:11px}#nav button.stc-nav-link,#nav summary{font-size:12px}}
+@media(max-width:880px){.stc-quick-entry{flex-direction:column;align-items:stretch}.stc-quick-actions{justify-content:flex-start}}
+@media(max-width:700px){.stc-quick-actions{display:grid;grid-template-columns:1fr 1fr}.stc-quick-actions button:first-child{grid-column:1/-1}.stc-quick-entry{padding:16px}}
+</style><style>
+/* STC LOGISTICS 1.20 — Technical Comic UX. Presentation layer only.
+   No changes to calculation, storage, navigation, or business logic. */
+:root{
+  --stc-ink:#10233f;--stc-deep:#16264f;--stc-royal:#2140a1;
+  --stc-blue:#285de0;--stc-cyan:#43cde8;--stc-red:#bb204d;
+  --stc-paper:#ffffff;--stc-canvas:#f2f4f0;--stc-cream:#fff6df;
+  --stc-line:#18324b;--stc-muted:#53667c;
+  color:var(--stc-ink);background:var(--stc-canvas);
+  font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  font-size:15px;line-height:1.52;
+}
+body{color:var(--stc-ink);background-color:var(--stc-canvas);background-image:radial-gradient(#6a8caa2e .65px,transparent .65px);background-size:18px 18px;overflow-x:hidden}
+::selection{background:#a2e8f4;color:#10233f}
+:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #edb83b!important;outline-offset:3px}
+h1,h2,h3,.stat,.big,.calendar-nav strong{font-family:'Trebuchet MS',system-ui,sans-serif;font-weight:900;letter-spacing:-.018em}
+h1{font-size:clamp(25px,2.5vw,33px);line-height:1.2;color:#152b57;margin-bottom:8px}
+h2{font-size:clamp(19px,2vw,24px);line-height:1.25;color:#1b346b}
+h3{font-size:16px;color:#1a315d}
+p,.muted,.ship .muted{line-height:1.55}
+.muted{color:#4d6279}
+label{font-size:13px;font-weight:800;letter-spacing:.005em;color:#1a3455}
+label input,label select,label textarea{font-weight:550}
+/* High-contrast field boxes, comfortable on touchscreens */
+input:not([type=checkbox]):not([type=radio]),select,textarea{
+  background:#fff;border:2px solid #879bac;border-radius:9px;min-height:48px;
+  color:#152843;box-shadow:inset 0 1px 0 #e5edf4;transition:border-color .15s,box-shadow .15s;
+}
+input:not([type=checkbox]):not([type=radio]):focus,select:focus,textarea:focus{border-color:var(--stc-blue);box-shadow:0 0 0 3px #4dc6ed44}
+input:disabled,select:disabled,textarea:disabled{background:#e9eff3;color:#667486}
+button{border-radius:10px;min-height:44px;line-height:1.25;font-weight:850;letter-spacing:.004em;transition:background-color .16s,transform .16s,box-shadow .16s;color:var(--stc-ink)}
+button.primary,.primary{background:var(--stc-red);color:#fff;border:2px solid #74142f;box-shadow:3px 3px 0 #74142f}
+button.primary:hover{background:#d72b57;transform:translate(-1px,-1px);box-shadow:4px 4px 0 #74142f}
+button.alt,.alt{background:#eaf2ff;border:2px solid #244e90;color:#173967;box-shadow:2px 2px 0 #244e9033}
+button.alt:hover{background:#d2e9fa;transform:translate(-1px,-1px)}
+button.danger,.danger{border:2px solid #b92d47;color:#91223b;background:#fff0f1;box-shadow:2px 2px 0 #b92d4730}
+button:disabled{opacity:.54;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+/* The left navigation feels like a technical instrument panel */
+.sidebar{width:265px;background-color:#172a67;background-image:linear-gradient(#ffffff0b 1px,transparent 1px),linear-gradient(90deg,#ffffff0b 1px,transparent 1px),linear-gradient(160deg,#203e9a,#142253 84%);background-size:22px 22px,22px 22px,auto;border-right:4px solid #111d43;padding:20px 15px;box-shadow:4px 0 0 #59c4eb33;scrollbar-color:#7299da transparent}
+.stc-brand-home{background:#ffffff0d;border:2px solid #ffffff55;border-radius:14px;min-height:76px;box-shadow:4px 4px 0 #081b4870;padding:8px}
+.stc-brand-home:hover,.stc-brand-home:focus-visible{background:#ffffff25}
+.stc-brand-home img{width:51px;height:51px;filter:drop-shadow(0 1px 3px #0005)}
+.stc-brand-home span{color:#fff;font-size:14px;letter-spacing:.015em}
+.stc-brand-home small{color:#d8e9fc;font-size:10px}
+#nav .stc-nav-heading{color:#cee6fa;border-bottom:1px dashed #ffffff63;font-size:10px;letter-spacing:.18em;margin:6px 4px 7px;padding:6px 6px 9px}
+#nav button.stc-nav-link{border:1px solid transparent;border-radius:9px;min-height:45px;padding:10px 11px;font-size:13px;color:#f1f7ff;font-weight:750}
+#nav button.stc-nav-link:hover{border-color:#ffffff6b;background:#ffffff1d}
+#nav button.stc-nav-link.active{background:#f5faff;color:#143366;border:2px solid #77d8f1;box-shadow:3px 3px 0 #09204e;font-weight:900}
+#nav .stc-nav-icon{font-size:17px;width:22px}
+#nav details.stc-nav-group{border:1px solid #b5d9fa47;border-radius:10px;background:#09235628;margin:2px 0;overflow:visible}
+#nav details.stc-nav-group[open]{background:#0a204f99;border:2px solid #83bde477}
+#nav summary{font-weight:850;min-height:49px;padding:12px 11px;letter-spacing:.005em;color:#fff}
+#nav summary:hover{background:#ffffff1a}
+#nav .stc-nav-children{border-left:2px solid #6acbe0;margin:3px 6px 10px 11px;padding-left:9px}
+#nav .stc-nav-children button.stc-nav-link{padding:9px 8px;min-height:42px}
+.ent-side-widgets .widget{background:#f8fcff13;border:2px solid #9ad7e977;border-radius:11px;box-shadow:3px 3px 0 #05153655}
+.ent-side-widgets .widget h3{color:#eef8ff}
+.ent-side-widgets .widget .digital,.ent-side-widgets .widget .big{font-variant-numeric:tabular-nums;color:#fff}
+.ent-side-widgets .widget input{background:#fff}
+/* Fixed navigation header: no logo duplicates */
+.top{height:75px;background:#fffefb;border-bottom:3px solid var(--stc-line);padding:13px 28px;box-shadow:0 3px 0 #5bcbe529}
+#pageTitle{font-size:18px;font-weight:900;color:#192f5a;letter-spacing:.005em}
+.user-chip{border:1.5px solid #567db3;background:#edf3ff;color:#183b74}
+.pill{border:1.5px solid #75a2a8;background:#defbf3;color:#11594d}
+.top-user button{box-shadow:none}
+.content{max-width:1430px;padding:26px 28px 105px}
+/* Graphic-card language: white paper, comic ink contour, offset shadow */
+.card,.widget,.calendar-panel{
+  background:var(--stc-paper);border:2px solid var(--stc-line);
+  border-radius:14px;box-shadow:5px 5px 0 #b7cbd5;
+  margin-bottom:21px;position:relative;
+}
+.card{padding:22px 23px}
+.card h2{margin-bottom:17px}
+.card h2:first-child::before,.widget h3:first-child::before{content:'';display:inline-block;width:7px;height:16px;background:var(--stc-cyan);border:1px solid var(--stc-line);border-radius:2px;margin-right:9px;vertical-align:-2px}
+.widget{padding:19px}
+.widget h3{color:#2d446b;font-size:14px}
+.widget .big,.stat{color:#17438a;font-weight:950;letter-spacing:-.035em}
+.stc-quick-entry{background:linear-gradient(125deg,#f5fbff 0%,#eaf2ff 78%);border:2px solid #1a3863;box-shadow:6px 6px 0 #a4cbdf;padding:19px 23px}
+.stc-quick-eyebrow,.calendar-eyebrow{font-size:11px;font-weight:950;letter-spacing:.15em;color:#20558e}
+.stc-quick-entry h2{font-size:clamp(23px,2.5vw,30px);color:#163369}
+.stc-quick-actions{gap:10px}
+.stc-quick-actions button{min-height:46px}
+.note,.adminBanner,.geo-archive-note{border:2px solid #236c9a;border-left:6px solid #39b9df;border-radius:10px;background:#eaf8ff;color:#204b66;padding:14px 16px;box-shadow:3px 3px 0 #bbd8e4}
+.note.warn{background:#fff5da;color:#65410d;border-color:#ca9133;border-left-color:#ffc746;box-shadow:3px 3px 0 #ead5a1}
+.note.warn[style]{border-left-width:6px!important;border-left-color:#e4a43b!important}
+.result{background:#e7f5ff;border:2px solid #3668a4;border-left:6px solid var(--stc-blue);border-radius:9px;color:#153c68;padding:14px 15px;font-weight:850;box-shadow:3px 3px 0 #b6d6e9}
+.ship{background:#f9fcff;border:2px solid #6d91af;border-radius:12px;padding:18px;box-shadow:3px 3px 0 #cbdbe4}
+.item{border:2px dashed #638aa4;background:#fffefb;border-radius:10px}
+.manual-quote-price,.quote-search-panel,.fast-direct-volume,.calendar-quick-save{border:2px solid #2670ae;border-radius:12px;background:#eef8ff;box-shadow:3px 3px 0 #c4deed}
+.fast-volume-mode{border:2px solid #5b8cae}
+.quote-dest-results,.geo-suggestions{border:2px solid #416d9c;border-radius:10px;box-shadow:4px 4px 0 #b2cce2}
+.quote-dest-results button,.geo-suggestions button{border-bottom:1.5px solid #d3e2ee}
+/* Technical drawing-style calendar grid: explicit lines and status strips */
+.calendar-panel{padding:21px}
+.calendar-heading h2{color:#16336e;font-size:clamp(23px,2.5vw,29px)}
+.calendar-nav strong{color:#1c3e7a}
+.calendar-legend{border-top:2px dashed #b1c7d9;padding:15px 0}
+.cal-dot{border:1.5px solid #192e4c;width:11px;height:11px}
+.calendar-highlights span{background:#edf6ff;border:1.5px solid #95b9d4;color:#204971;font-weight:750}
+.calendar-weekdays span{font-size:12px;font-weight:950;color:#1e477d;letter-spacing:.025em;text-transform:uppercase}
+.calendar-day{border:1.8px solid #8eaabd;border-radius:9px;background:#fff;min-height:122px}
+.calendar-day.outside{background:#edf1f4}
+.calendar-day.today{border:3px solid #2459d0;padding:4px;box-shadow:inset 0 0 0 2px #b9dff9;background:#eef8ff}
+.calendar-day-head strong{color:#203960;font-weight:950}
+.cal-entry{border-radius:7px;border:1px solid #7eaccd;border-left-width:5px;font-weight:850;padding:7px;min-height:36px}
+.cal-entry.run{border-color:#2468b2;border-left-width:5px}
+.cal-entry.accepted{border-color:#1a815d;border-left-width:5px}
+.cal-entry.waiting{border-color:#b98912;border-left-width:5px}
+.cal-entry.declined{border-color:#8793a4;border-left-width:5px}
+.calendar-detail{border:3px solid var(--stc-line);box-shadow:9px 9px 0 #0e26408a;border-radius:13px}
+.cal-detail-summary>div{border:1.5px solid #9ab6c8;background:#f1f7fe}
+/* Tabular records need crisp dividers */
+.tablewrap{border:2px solid #a1b9ca;border-radius:9px;background:#fff}
+table{border-collapse:separate;border-spacing:0}
+th{background:#e4f1ff;color:#1e3e6d;font-weight:950;letter-spacing:.035em;text-transform:uppercase;font-size:11px;border-bottom:2px solid #587ca0}
+td{background:#fff;border-bottom:1.5px solid #cedce5;font-size:13px;color:#233b59}
+tr:nth-child(even) td{background:#f8fbff}
+tr:last-child td{border-bottom:0}
+.ent-cards button{background:#fff;border:2px solid #27466c;color:#1b3a68;border-radius:10px;box-shadow:3px 3px 0 #b5cede;font-weight:800}
+.ent-cards button:hover{background:#edf8ff}
+.ent-check{border:1.5px dashed #7795b6;background:#f3f9ff}
+.ent-line{border-bottom:1.5px dashed #b0c7d5}
+.userLine{border:1.5px solid #98b2cc;background:#fcfdff}
+/* Clearly selected calendar shortcut (same highlight as all other menu entries) */
+#nav button.stc-calendar-shortcut.active,#nav button.active{background:#f5faff;color:#173567;border:2px solid #7ddbf0;box-shadow:3px 3px 0 #071d47;font-weight:900}
+#sessionUser:empty{display:none}
+/* Authentication keeps same workflow; only changes its visual presentation */
+#authGate{background-color:#0f2455;background-image:linear-gradient(#ffffff15 1px,transparent 1px),linear-gradient(90deg,#ffffff15 1px,transparent 1px),linear-gradient(145deg,#264695,#0c214f);background-size:28px 28px,28px 28px,auto}
+.authPanel{border:3px solid #10274c;border-radius:15px;box-shadow:9px 9px 0 #06142eb0;padding:27px}
+.authPanel h1{color:#17346a}
+.authPanel .disclaimer{border:2px solid #d8b06b}
+/* Mobile-only navigation: legible, clearly selected and no cramped touch areas */
+.mobileNav{background:#fffdf9;border-top:3px solid var(--stc-line);box-shadow:0 -3px 0 #99bad255}
+.mobileNav button{color:#1b385d;background:transparent;min-height:51px;border-radius:7px}
+.mobileNav button.active{color:#1c4d9b;background:#e6f3ff;box-shadow:inset 0 0 0 2px #3b73b3}
+#mobileMore.mobileMore:not([hidden]){border:2px solid var(--stc-line);box-shadow:5px 5px 0 #a9bfcd;background:#fffdf8}
+#mobileMore details.stc-nav-group{border-top:1.5px dashed #acc1d0}
+#mobileMore button.stc-nav-link:hover{background:#e9f5ff}
+.toast{background:#142c50;border:2px solid #8edfe8;box-shadow:4px 4px 0 #1c3145;border-radius:9px}
+/* Protect keyboard & viewport readability */
+@media(max-width:1050px){.sidebar{width:228px;padding:15px 10px}.content{padding:22px 20px 110px}.card{padding:19px}.stc-brand-home span{font-size:12px}}
+@media(max-width:700px){
+  .top{height:auto;min-height:70px;padding:9px 12px;gap:7px}.top>.row{gap:5px;flex-wrap:nowrap;flex-shrink:0}.top-user{gap:5px;flex-wrap:nowrap}.user-chip{max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.content{padding:18px 13px 110px}
+  #pageTitle{font-size:15px}.card,.widget,.calendar-panel{border-radius:11px;box-shadow:3px 3px 0 #c0d1d9;margin-bottom:17px}
+  .card{padding:16px}.calendar-panel{padding:15px}
+  .stc-quick-entry{padding:16px;box-shadow:3px 3px 0 #bdd2dc}
+  .stc-quick-entry h2{font-size:24px}
+  h1{font-size:26px}h2{font-size:20px}
+  .note,.geo-archive-note{padding:12px;box-shadow:2px 2px 0 #c9d9e3}
+  input:not([type=checkbox]):not([type=radio]),select,textarea{min-height:48px;font-size:16px}
+  .mobileNav button{padding:8px 4px;min-width:0}
+  .calendar-day{min-height:112px}
+  .top-user button{min-height:34px}
+  .authPanel{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){button,input,select,textarea,#nav .stc-nav-chevron{transition:none!important}button:hover{transform:none!important}}
+@media print{body{background:white}.sidebar,.mobileNav{display:none!important}.body{width:100%}.card,.widget,.calendar-panel{box-shadow:none;break-inside:avoid}}
+
+</style><style>/* STC 1.21 extension: rispetta colori e layout 1.20 */
+.stc-service-box{border:2px solid #172b52}.stc-service-flags{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.stc-service-flags label{display:flex;gap:8px;align-items:center;padding:12px;background:#f1f5ff;border:2px solid #163766;border-radius:9px;font-weight:800;min-width:175px}.stc-service-flags input{width:22px;height:22px}.stc-service-detail{margin:10px 0;padding:18px;border-left:5px solid #1954a8;background:#fafcff}.stc-tinytable{width:100%;border-collapse:collapse}.stc-tinytable td,.stc-tinytable th{border-bottom:1px solid #bdd0ed;padding:10px;text-align:left}.stc-cal-filters{gap:8px;padding:10px 0;align-items:end}.stc-cal-filters label{min-width:150px}.stc-agenda-row{display:flex;justify-content:space-between;gap:8px;padding:12px;border:2px solid #ced7e5;border-radius:8px;margin:7px 0}.stc-chart{border:2px solid #bbc8d6;padding:14px;border-radius:10px;margin:15px 0;overflow-x:auto}.stc-chart svg{max-width:100%}#stcCrmSummary{margin:10px 0}.stc-supplier-row{padding:10px;border-bottom:1px solid #bbc8d6}
+@media(max-width:600px){.stc-service-flags label{min-width:100%;}.stc-cal-filters{flex-direction:column;align-items:stretch}.stc-cal-filters label{width:100%}}
+</style></head><body class="app-locked">
+<div id="authGate" aria-live="polite">
+ <div class="authPanel">
+  <img src="icon-192.png" alt="STC Logistics">
+  <h1>STC LOGISTICS</h1>
+  <p id="authSubtitle" style="text-align:center">Configurazione accesso locale</p>
+  <div class="disclaimer">Crittografia dei dati su questo dispositivo. La sessione temporanea consente di ricaricare senza reinserire la password finché resta attiva. Le autorizzazioni tra utenti sono provvisorie: la sicurezza aziendale centralizzata richiede il server.</div>
+  <form id="setupForm" class="hidden" onsubmit="event.preventDefault();createFirstAdmin()">
+   <label>Nome amministratore<input id="firstAdminName" autocomplete="name" required maxlength="70" placeholder="Nome e cognome"></label>
+   <label>Nuova password (almeno 12 caratteri)<input id="firstAdminPassword" type="password" autocomplete="new-password" minlength="12" required></label>
+   <label>Ripeti password<input id="firstAdminConfirm" type="password" autocomplete="new-password" minlength="12" required></label>
+   <button class="primary" id="setupSubmit" type="submit">Crea amministratore e proteggi l'archivio</button>
+   <p class="muted">Il primo amministratore è specifico di questo dispositivo. Conserva la password e un backup cifrato: non possiamo recuperarla per te.</p>
+  </form>
+  <form id="loginForm" class="hidden" onsubmit="event.preventDefault();loginOffline()">
+   <label>Seleziona utente<select id="loginUser" required><option value="">Seleziona</option></select></label>
+   <label>Password<input id="loginPassword" type="password" autocomplete="current-password" required></label>
+   <button class="primary" id="loginSubmit" type="submit">Accedi</button>
+   <p class="muted">La sessione resta attiva in questa scheda anche dopo una ricarica e si blocca dopo 30 minuti di inattività. Se chiudi la scheda o premi Esci, dovrai accedere di nuovo. Nessuna password viene salvata.</p>
+  </form>
+  <p id="authError" role="alert" style="color:#aa173a;font-weight:700"></p>
+ </div>
+</div>
+<div class="layout"><aside class="sidebar"><button type="button" class="brand stc-brand-home" onclick="go('dashboard')" title="Torna alla schermata principale" aria-label="STC LOGISTICS, torna alla schermata principale"><img src="icon-192.png" alt=""><span>STC LOGISTICS<small>Gestionale aziendale</small></span></button><nav id="nav" class="nav"></nav><div class="ent-side-widgets"><article class="widget">
+  <h3>◷ Orologio digitale</h3><div class="big digital" id="digitalClock">--:--:--</div><small id="digitalDate">Ora locale del dispositivo</small>
+ </article><article class="widget">
+  <h3>☁ Meteo della sede</h3><div><span class="weather-icon" id="weatherEmoji">☁️</span><span class="big" id="weatherTemp">—</span></div>
+  <small id="weatherDetail">Imposta la città, poi aggiorna.</small>
+  <div class="weather-prompt"><label>Città<input id="weatherCity" value="Cerea" maxlength="80" placeholder="Es. Brescia"></label><button class="alt" onclick="refreshWeather(true)">Aggiorna</button></div>
+  <small id="weatherStamp">Dati online · fonte Open-Meteo (uso commerciale da verificare)</small>
+ </article></div><p class="foot" style="color:#b4d8d3">Archivio locale su questo dispositivo.<br>Sessione ripristinabile dopo ricarica · blocco 30 min.</p></aside><div class="body"><header class="top"><div class="mobile-top-brand"><img src="icon-192.png" alt="STC Logistics"><strong id="pageTitle">Pannello operativo</strong></div><div class="row"><span id="netStatus" class="pill">Locale</span><div class="top-user"><span id="sessionUser" class="user-chip"></span><button class="alt" onclick="logoutOffline()">Esci</button></div></div></header><main class="content">
+<section id="dashboard" class="view active"><div class="note warn" style="border-left:4px solid #c09b35"><strong>Archivio protetto sul dispositivo.</strong> I dati non si sincronizzano automaticamente tra dispositivi. Esporta regolarmente un backup e usa «Esci» sui dispositivi condivisi. <button type="button" class="alt" onclick="go('settings')" style="margin:6px 0 0 10px">Gestisci backup</button></div><div class="card stc-quick-entry" aria-label="Azioni principali"><div><span class="stc-quick-eyebrow">IL TUO LAVORO, SUBITO</span><h2>Calcolo rapido</h2><p class="muted">Inserisci una bolla, calcola il trasporto o apri un preventivo.</p></div><div class="stc-quick-actions"><button class="primary" onclick="go('quick')">▤ Apri Calcolo rapido</button><button class="alt" onclick="newQuote()">+ Nuovo preventivo</button><button class="alt" onclick="go('archive')">▣ Archivio</button></div></div><section class="card calendar-panel" id="operationalCalendar" aria-label="Calendario operativo">
+ <div class="calendar-heading"><div><span class="calendar-eyebrow">PIANIFICAZIONE TRASPORTI</span><h2>Calendario operativo</h2><p class="muted">Le bolle registrate sono giri confermati. I preventivi restano in attesa finché non vengono accettati.</p></div>
+ <div class="calendar-nav"><button class="alt" onclick="calendarMove(-1)" aria-label="Mese precedente">‹</button><strong id="calendarTitle" aria-live="polite">Calendario</strong><button class="alt" onclick="calendarMove(1)" aria-label="Mese successivo">›</button><button class="alt" onclick="calendarToday()">Oggi</button></div></div>
+ <div class="row stc-cal-filters"><label>Vista <select id="stcCalView" onchange="STCExtra.renderCalendarView()"><option value="month">Mese</option><option value="week">Settimana</option><option value="day">Giorno</option></select></label><label>Risorsa <select id="stcCalResource" onchange="STCExtra.renderCalendarView()"><option value="">Tutte le risorse</option></select></label><button class="alt" onclick="STCExtra.calPeriod(-1)">← Periodo</button><button class="alt" onclick="STCExtra.calPeriod(1)">Periodo →</button></div><div id="stcCalAgenda" class="hidden"></div><div class="calendar-legend"><span><i class="cal-dot cal-run"></i> Bolla confermata</span><span><i class="cal-dot cal-wait"></i> Preventivo in attesa</span><span><i class="cal-dot cal-accept"></i> Preventivo accettato</span><span><i class="cal-dot cal-decline"></i> Rifiutato / annullato</span></div>
+ <div class="calendar-highlights" id="calendarSummary" aria-live="polite"></div>
+ <div class="calendar-scroll"><div class="calendar-weekdays" aria-hidden="true"><span>Lun</span><span>Mar</span><span>Mer</span><span>Gio</span><span>Ven</span><span>Sab</span><span>Dom</span></div><div class="calendar-month" id="calendarGrid" role="grid" aria-label="Attività del mese"></div></div>
+ <div id="calendarUndated" class="calendar-undated"></div>
+</section>
+<div id="entOverview"></div>
+<div class="widget-grid fuel-below-calendar" aria-label="Carburante"> <article class="widget">
+  <h3>⛽ Gasolio Italia · media self</h3><div class="big" id="fuelPrice">— €/l</div><small id="fuelStamp">Prezzo non disponibile</small>
+  <div class="row"><button class="alt" onclick="refreshFuel(true)">Aggiorna</button><button class="alt admin-only" onclick="setFuelManual()">Inserisci prezzo</button></div>
+  <small>Dato indicativo, non costo contrattuale. <a href="https://www.mimit.gov.it/it/prezzo-medio-carburanti" target="_blank" rel="noopener">Fonte ufficiale MIMIT ↗</a></small>
+ </article></div>
+<div class="note">I dati sono locali sul dispositivo, non sincronizzati con un server. Prima di usarla per dati aziendali importanti, verifica salvataggi e ripristino backup. La sincronizzazione e i ruoli con sicurezza server non sono ancora attivi; il login locale non sostituisce il server.</div><div class="row between finance-only" style="margin:10px 0 16px"><h2 style="margin:0">Controllo economico</h2><label>Periodo <input id="dashMonth" type="month" onchange="renderDashboard()"></label></div><div class="grid"><div class="card span3 finance-only"><div class="muted">Vendite confermate (imponibile)</div><div class="stat" style="font-size:25px" id="kpiSales">€ 0,00</div></div><div class="card span3 finance-only"><div class="muted">Costi preventivati confermati</div><div class="stat" style="font-size:25px" id="kpiCost">€ 0,00</div></div><div class="card span3 finance-only"><div class="muted">Margine preventivato (solo se costi completi)</div><div class="stat" style="font-size:25px" id="kpiMargin">€ 0,00</div></div><div class="card span3 finance-only"><div class="muted">Movimenti netti registrati</div><div class="stat" style="font-size:25px" id="kpiCash">€ 0,00</div></div><div class="card span12 finance-only"><h2>Attenzione e attività</h2><div id="dashAlerts" class="muted"></div><div id="dashChart" class="bars" role="img" aria-label="Confronto ricavi e costi ultimi sei mesi"></div></div><div class="card span3"><div class="muted">Preventivi</div><div class="stat" id="countQuotes">0</div></div><div class="card span3"><div class="muted">Clienti</div><div class="stat" id="countClients">0</div></div><div class="card span3"><div class="muted">Zone tariffarie</div><div class="stat" id="stcCountTariffs">43</div></div><div class="card span3"><div class="muted">Connessione</div><div class="stat" style="font-size:19px" id="connText">—</div></div><div class="card span12"><h2>Preventivi recenti</h2><div id="recent"></div></div></div></section>
+<section id="quick" class="view">
+ <div class="geo-archive-note"><span id="geoArchiveStatus">Ricerca località offline pronta</span><button type="button" class="alt" onclick="quickUpdateGeo()">Aggiorna elenco comuni</button></div>
+ <div class="fast-intro"><div><span class="fast-eyebrow">STRUMENTO OPERATIVO</span><h1>Calcolatrice rapida</h1><p>Prendi una bolla: indica destinazione e peso. Digita i m³ già noti oppure le dimensioni: il programma calcola tutto automaticamente.</p></div><button class="alt" onclick="quickReset()">Azzera calcolo</button></div>
+ <div class="note fast-note">Il peso tassabile è il maggiore tra <strong>peso reale</strong> e <strong>volume × 2,5 q/m³</strong>, arrotondato al quintale superiore. Fino a 3 q si applica il minimo della zona; oltre 50 q occorre una quotazione manuale. Scrivi direttamente i m³ oppure inserisci le misure dei colli: il volume viene calcolato in automatico, senza scegliere alcuna modalità. Vale sempre l’ultimo dato modificato, senza sommare i volumi.</div>
+ <div id="fastShipments"></div>
+ <div class="fast-summary card"><div><span class="fast-eyebrow">RIEPILOGO</span><h2>Totale destinazioni</h2><p class="muted" id="quickStatus">Inserisci i dati</p></div><div><strong class="fast-grand" id="quickGrandTotal">—</strong><small class="muted">IVA esclusa</small></div></div>
+ <div class="card calendar-quick-save"><div><h3>Registra il giro nel calendario</h3><p class="muted">Quando hai terminato la bolla, conferma il giro: tutte le spedizioni verranno salvate insieme nel giorno indicato. Il risultato è un <strong>valore di trasporto stimato, IVA esclusa</strong>, non un utile netto.</p></div><div class="calendar-quick-fields"><label>Data del giro<input type="date" id="quickRunDate"></label><label>Cliente della bolla (per EPAL e fatture)<select id="quickRunClient" onchange="entQuickQuoteChoices()"><option value="">Da associare</option></select></label><label>Preventivo accettato collegato (facoltativo)<select id="quickRunQuoteLink"><option value="">Nessuno</option></select></label><input type="hidden" id="quickEPALDelivered" value="0"><input type="hidden" id="quickEPALReturned" value="0"><label>Riferimento bolla (facoltativo)<input id="quickRunRef" maxlength="80" placeholder="Es. Bolla 1"></label><button class="primary" id="quickSaveRun" onclick="calendarSaveQuickRun()">Registra giro confermato</button></div><small id="quickRunHint" class="muted"></small></div>
+<div class="fast-toolbar"><button class="alt" onclick="quickAddShip()">+ Aggiungi destinazione</button><button class="primary" id="quickToQuote" onclick="quickToQuote()" disabled>Trasforma in preventivo →</button></div>
+ <p class="muted fast-caption">La zona tariffaria si sceglie dal tariffario approvato: non attribuiamo automaticamente CAP o comuni senza una mappa verificata. Le tariffe speciali sono già comprese nella rispettiva zona; il tariffario attuale non prevede supplementi separati.</p>
+ </section>
+<section id="quote" class="view"><div class="row between"><div><h1 id="quoteTitle">Nuovo preventivo</h1><p class="muted">Destinatari e comuni suggeriti automaticamente. Seleziona il risultato corretto per compilare provincia, regione e zona tariffaria.</p></div><button class="alt" onclick="newQuote()">+ Nuovo</button></div><div class="card"><h2>Dati preventivo</h2><div class="fields"><label>Cliente esistente *<select id="customer" onchange="quoteCustomerChanged()"><option value="">Seleziona un cliente</option></select></label><datalist id="clientNames"></datalist><div class="row" style="align-items:end"><button class="alt" type="button" onclick="quickCustomer()">+ Nuovo cliente</button></div><label>Riferimento (seleziona o crea)<input id="reference" list="refNames" placeholder="Scegli esistente o scrivi nuovo" oninput="changed()"></label><datalist id="refNames"></datalist><label>Data preventivo<input type="date" id="quoteDate" onchange="changed()"></label><label>Data consegna prevista<input type="date" id="quoteDeliveryDate" onchange="changed()" required></label><label class="full">Note<textarea id="notes" oninput="changed()" placeholder="Annotazioni interne"></textarea></label></div></div><div class="card stc-service-box" id="stcServicePanel"><div class="row between"><h2>Servizi del preventivo</h2><span class="pill">Un documento · tre servizi</span></div>
+<p class="muted">Seleziona i servizi: dati merce e cliente sono condivisi. I prezzi aggiuntivi vanno configurati dall'amministratore prima dell'uso commerciale.</p>
+<div class="fields"><label>Punto di partenza<select id="svcStart" onchange="STCExtra.startChanged()"><option value="shipping">Spedizione</option><option value="handling">Carico/scarico</option><option value="storage">Deposito</option></select></label>
+<label>Fornitore spedizione (facoltativo)<select id="svcSupplier" onchange="changed()"><option value="">Tariffario STC attuale</option></select></label></div>
+<div class="stc-service-flags"><label><input type="checkbox" id="svcShipping" checked onchange="STCExtra.toggleServices()"> Spedizione</label><label><input type="checkbox" id="svcHandling" onchange="STCExtra.toggleServices()"> Carico / scarico</label><label><input type="checkbox" id="svcStorage" onchange="STCExtra.toggleServices()"> Deposito</label></div>
+<div id="svcHandlingFields" class="stc-service-detail hidden"><h3>Carico e scarico bancali</h3><div class="fields"><label>Bancali caricati<input id="svcLoad" inputmode="numeric" type="number" min="0" step="1" value="0" oninput="changed()"></label><label>Bancali scaricati<input id="svcUnload" inputmode="numeric" type="number" min="0" step="1" value="0" oninput="changed()"></label></div><button class="alt" type="button" onclick="document.getElementById('svcUnload').value=document.getElementById('svcLoad').value;changed()">Stessa quantità allo scarico</button></div>
+<div id="svcStorageFields" class="stc-service-detail hidden"><h3>Deposito</h3><div class="fields"><label>Metodo<select id="svcStorageMode" onchange="STCExtra.toggleServices()"><option value="pallet">Bancali / notte</option><option value="area">Superficie m² / notte</option></select></label><label>Notti intere<input id="svcNights" type="number" min="1" step="1" value="1" oninput="changed()"></label><label>Bancali (modalità a bancale)<input id="svcPallets" type="number" min="1" step="1" value="1" oninput="changed()"></label><label>Superficie totale m² (modalità area)<input id="svcArea" type="text" inputmode="decimal" placeholder="Es. 2,40" oninput="changed()"></label></div><small class="muted">Se hai già inserito colli con misure complete, puoi usare «Calcola area dalla merce». Il deposito utilizza soltanto l'impronta L × P, non l'altezza.</small><div class="row"><button class="alt" type="button" onclick="STCExtra.fromCargo()">Calcola area dalla merce</button></div></div>
+<div class="result" id="svcBreakdown" aria-live="polite">Seleziona cliente e servizi per il riepilogo.</div></div>
+<div id="svcShippingFields"><div class="row between" style="margin:14px 0"><h2 style="margin:0">Spedizioni</h2><button class="alt" onclick="addShip()">+ Destinazione</button></div><div id="ships"></div></div><div class="card"><h2>Riepilogo commerciale</h2><p class="muted">Prezzo finale e IVA aggiornati in tempo reale. Il prezzo concordato è separato dal listino originale.</p><div class="fields"><label class="admin-only">Supplemento generale €<input id="supp" type="number" min="0" step="0.01" value="0" oninput="changed()"></label><label class="admin-only">Ricarico generale €<input id="markup" type="number" min="0" step="0.01" value="0" oninput="changed()"></label><label class="admin-only">Sconto generale €<input id="discount" type="number" min="0" step="0.01" value="0" oninput="changed()"></label><label class="admin-only">IVA % (configurare)<input id="vat" type="number" min="0" step="0.01" value="0" oninput="changed()"></label></div><div class="manual-quote-price">
+ <h3>Prezzo finale concordato</h3>
+ <p class="muted">Il prezzo nasce dal tariffario. Se necessario, digita qui l’importo finale <strong>IVA esclusa</strong> concordato con il cliente. Non modifichi le tariffe aziendali.</p>
+ <div class="fields">
+  <label>Prezzo finale manuale € (imponibile, facoltativo)<input id="manualQuotePrice" type="text" inputmode="decimal" autocomplete="off" placeholder="Vuoto = prezzo automatico" oninput="STCExtra.manualEuroChange()"></label>
+  <label>Correzione commerciale % <small>(positiva sconto, negativa maggiorazione)</small><input id="svcManualPercent" type="text" inputmode="decimal" placeholder="Es. 5 oppure -5" oninput="STCExtra.manualPercentChange()"></label><label>Motivo della modifica (facoltativo)<input id="manualPriceReason" maxlength="250" placeholder="Es. accordo commerciale" oninput="changed()"></label>
+ </div>
+ <div class="row" style="align-items:center;margin:10px 0"><button type="button" class="alt" onclick="STCExtra.manualReset()">↺ Ripristina prezzo calcolato</button></div>
+ <p class="muted" id="manualPriceInfo" aria-live="polite"></p>
+ </div><div class="result" id="total">Compila una spedizione</div><p id="issues" class="muted"></p><div class="row"><button class="primary" id="quoteSaveButton" onclick="saveQuote()">💾 Salva preventivo</button><button class="alt" onclick="STCExtra.pdfCurrent(true)">Anteprima PDF</button><button class="alt" onclick="STCExtra.pdfCurrent()">Scarica PDF A4</button><span class="muted" id="draftInfo">Bozza locale</span></div></div></section>
+<section id="archive" class="view"><h1>Archivio preventivi</h1><div class="card"><strong>Documenti collegati:</strong> <button class="alt" onclick="go('invoices')">Fatture</button> <button class="alt" onclick="go('inventory')">Magazzino</button> <button class="alt" onclick="go('epal')">Bancali EPAL</button> <p class="muted">L’archivio preventivi originale rimane invariato; i nuovi documenti sono collegati attraverso i loro riferimenti univoci.</p></div><p class="muted">Modifica, duplica o elimina i preventivi salvati.</p><div class="card"><label>Ricerca<input id="searchQuote" oninput="renderArchive()" placeholder="Cliente, codice, riferimento"></label><div class="tablewrap" id="archiveTable" style="margin-top:14px"></div></div></section>
+<section id="ledger" class="view"><h1>Registro movimenti</h1><div class="note warn">Registra solo incassi e pagamenti effettivi. I preventivi accettati sono mostrati separatamente nella dashboard e non diventano automaticamente incassi.</div><div class="card"><h2>Nuovo movimento</h2><div class="fields"><label>Data<input type="date" id="mDate"></label><label>Tipo<select id="mType"><option value="entrata">Entrata / incasso</option><option value="uscita">Uscita / pagamento</option></select></label><label>Importo €<input id="mAmount" type="number" min="0.01" step="0.01"></label><label>Categoria<select id="mCategory"><option>Trasporto</option><option>Supplemento</option><option>Carburante</option><option>Pedaggi</option><option>Cliente</option><option>Altro</option></select></label><label>Cliente / Fornitore<input id="mParty" list="clientNames"></label><label>Riferimento<input id="mReference" list="refNames"></label><label class="full">Causale e note<input id="mNotes" placeholder="Motivo del movimento"></label></div><p><button class="primary" onclick="addMovement()">+ Registra movimento</button></p></div><div class="card"><h2>Movimenti registrati</h2><div id="ledgerTable" class="tablewrap"></div></div></section><section id="customers" class="view"><h1>Clienti</h1><div class="card"><h2>Nuova anagrafica</h2><div class="fields"><label>Ragione sociale *<input id="cName"></label><label>Email<input id="cEmail" type="email"></label><label>Telefono<input id="cPhone" type="tel"></label></div><p><button class="primary" onclick="addCustomer()">+ Salva cliente</button></p></div><div class="card"><h2>Rubrica</h2><div id="customerList"></div></div><div class="card"><h2>Scheda commerciale cliente</h2><p class="muted">Sconti indipendenti: positivo = sconto, negativo = maggiorazione. Le modifiche non cambiano i preventivi salvati.</p><label>Cliente<select id="stcCrmClient" onchange="STCExtra.loadClientTerms()"></select></label><div class="fields"><label>Spedizioni %<input id="stcDiscShip" type="number" min="-100" max="100" step="0.01"></label><label>Carico / scarico %<input id="stcDiscLoad" type="number" min="-100" max="100" step="0.01"></label><label>Deposito %<input id="stcDiscStore" type="number" min="-100" max="100" step="0.01"></label></div><p><button class="primary" onclick="STCExtra.saveClientTerms()">Salva condizioni cliente</button></p><div id="stcCrmSummary"></div></div><div class="card"><h2>Destinatari dei clienti</h2><p class="muted">Anagrafiche di consegna associate al cliente che richiede il trasporto.</p><div id="recipientDirectory"></div></div></section>
+
+<section id="epal" class="view"><h1>Bancali EPAL · vuoti a rendere</h1><p class="muted">Saldo per cliente: EPAL consegnati meno EPAL ritirati. I bancali indicati nelle bolle sono già conteggiati automaticamente, senza duplicare il movimento.</p>
+<div class="grid"><div class="card span6"><h2>Movimento manuale</h2><div class="fields"><label>Cliente<select id="entEpalClient"></select></label><label>Data<input type="date" id="entEpalDate"></label><label>Operazione<select id="entEpalKind"><option value="delivered">Consegnati al cliente (+)</option><option value="returned">Ritirati / restituiti (−)</option></select></label><label>Quantità EPAL<input id="entEpalQty" type="number" inputmode="numeric" min="1" step="1"></label><label class="wide">Riferimento bolla / nota<input id="entEpalRef" placeholder="Facoltativo"></label></div><p><button class="primary" onclick="entEpalMove()">Registra EPAL</button></p></div>
+<div class="card span6"><h2>Saldi clienti</h2><div id="entEpalClients"></div></div><div class="card span12"><h2>Storico EPAL e bolle</h2><div id="entEpalHistory"></div></div></div></section>
+<section id="inventory" class="view"><h1>Magazzino · carico e scarico</h1><div class="card"><h2>Deposito · ingressi programmati / ricevuti</h2><p class="muted">Un preventivo con deposito accettato genera solo un ingresso atteso. La giacenza effettiva cambia soltanto dopo la conferma dell'arrivo fisico.</p><strong id="stcDepositsCount">Nessun ingresso</strong><div id="stcExpectedList"></div></div><p class="muted">Un'anagrafica articoli e un registro movimenti. Prezzi nuovi applicati ai nuovi movimenti; lo storico mantiene il prezzo alla data dell'operazione.</p><div class="grid"><div class="card span6"><h2>Nuovo articolo</h2><div class="fields"><label>Codice *<input id="entSKU" maxlength="55"></label><label>Nome *<input id="entItemName" maxlength="160"></label><label>Unità<select id="entItemUnit"><option value="pz">Pezzi</option><option value="kg">kg</option><option value="m">metri</option><option value="confezioni">Confezioni</option></select></label><label>Prezzo unitario €<input id="entItemPrice" inputmode="decimal" placeholder="Es. 12,50"></label><label>Scorta minima<input id="entItemMin" type="number" min="0" step="0.001" value="0"></label></div><p><button class="primary" onclick="entAddItem()">Salva articolo</button></p></div>
+<div class="card span6"><h2>Carico / scarico</h2><div class="fields"><label>Articolo<select id="entItemChoice"></select></label><label>Operazione<select id="entStockKind"><option value="carico">Carico +</option><option value="scarico">Scarico −</option></select></label><label>Quantità<input id="entStockQty" type="text" inputmode="decimal"></label><label>Prezzo per questo movimento € (facoltativo)<input id="entStockUnitPrice" type="text" inputmode="decimal" placeholder="Automatico: prezzo articolo"></label><label>Data<input type="date" id="entStockDay"></label><label>Cliente associato<select id="entStockClient"></select></label><label>Riferimento bolla / documento<input id="entStockReference" placeholder="Es. BOL-2026-0001"></label><label>Note<input id="entStockNote" maxlength="200"></label></div><p><button class="primary" onclick="entStockMove()">Registra movimento</button></p></div>
+<div class="card span12"><h2>Giacenze</h2><div id="entStockTable"></div></div><div class="card span12"><h2>Registro movimenti</h2><div id="entStockHistory"></div></div></div></section>
+<section id="invoices" class="view"><h1>Fatturazione · bozze interne</h1><div class="note warn"><b>Attenzione:</b> queste sono bozze di lavoro, non fatture elettroniche emesse. Non è implementata la generazione XML FatturaPA né la trasmissione SdI. Le aliquote IVA vanno indicate e verificate da chi gestisce la contabilità.</div>
+<div class="card"><h2>Nuova bozza da trasporti</h2><div class="fields"><label>Cliente<select id="entInvoiceClient" onchange="entInvoiceDue()"></select></label><label>Data documento<input id="entInvoiceDate" type="date"></label><label>IVA % — da verificare<input id="entInvoiceVAT" type="text" inputmode="decimal" value="22" placeholder="Aliquota per il caso concreto"></label></div><h3>Prestazioni non ancora associate ad altre fatture</h3><div id="entInvoiceSources"></div><div class="fields"><label class="wide">Riga manuale (facoltativa)<input id="entInvoiceDescription" maxlength="200" placeholder="Prestazione aggiuntiva"></label><label>Prezzo riga aggiuntiva €<input id="entInvoiceManual" type="text" inputmode="decimal"></label></div><p><button class="primary" onclick="entCreateInvoice()">Crea bozza collegata</button></p></div><div class="card"><h2>Bozze e documenti preparati</h2><div id="entInvoicesList"></div></div><div class="card hidden" id="entInvoiceDetails"></div></section>
+<section id="mail" class="view"><h1>Posta · archivio richieste</h1><div class="note warn">Non è una casella email sincronizzata in tempo reale. Per leggere nuove email serve una connessione autenticata (OAuth o server aziendale). Puoi importare messaggi .eml salvati sul dispositivo e collegarli alle bozze preventivo.</div><div class="card"><h2>Importa un messaggio salvato (.eml)</h2><label>Seleziona file dal dispositivo<input type="file" accept=".eml,message/rfc822" onchange="entMailImport(this)"></label><p class="muted">Importazione di testo e intestazioni; allegati, codifiche MIME complesse e firme non sono elaborati. Verifica sempre i dati proposti.</p><button class="alt" onclick="location.href='mailto:'">Apri app di posta del dispositivo</button></div><div class="card"><h2>Messaggi collegati</h2><div id="entMailList"></div></div><div id="entMailDetail" class="card hidden"></div></section>
+<section id="business" class="view"><h1>Dati aziendali e fiscali</h1><p class="muted">Questi dati sono condivisi con i moduli e inclusi nel backup cifrato della versione protetta. Le modifiche non alterano i documenti storici.</p><div class="card"><h2>STC LOGISTICS · dati aziendali</h2><div class="fields"><label>Ragione sociale<input id="ent_companyName" autocomplete="off"></label><label>Partita IVA<input id="ent_companyVat" autocomplete="off"></label><label>Codice fiscale<input id="ent_companyTax" autocomplete="off"></label><label>Sede e via<input id="ent_companyAddress" autocomplete="off"></label><label>CAP<input id="ent_companyZip" autocomplete="off"></label><label>Comune<input id="ent_companyCity" autocomplete="off"></label><label>Codice destinatario SdI<input id="ent_companySDI" autocomplete="off"></label><label>PEC<input id="ent_companyPEC" autocomplete="off"></label><label>IBAN<input id="ent_companyIban" autocomplete="off"></label></div><p><button class="primary" onclick="entSaveBusiness()">Salva dati aziendali</button></p></div><div class="card"><h2>Dati fiscali del cliente (rubrica unica)</h2><label>Cliente<select id="entFiscalClient" onchange="entChooseFiscal()"></select></label><div class="fields"><label>P. IVA<input id="ent_c_vat"></label><label>Codice fiscale<input id="ent_c_taxCode"></label><label>Indirizzo<input id="ent_c_address"></label><label>CAP<input id="ent_c_cap"></label><label>Città<input id="ent_c_city"></label><label>Provincia<input id="ent_c_province"></label><label>PEC<input id="ent_c_pec"></label><label>Codice SdI<input id="ent_c_sdi"></label></div><p><button class="primary" onclick="entSaveFiscal()">Aggiorna cliente</button></p></div></section>
+<section id="tariffs" class="view"><h1>Tariffario aziendale</h1>
+<div class="card"><h2>Tariffe servizi (carico/scarico e deposito)</h2><p class="note warn">I valori 5,00 € / 4,80 € nel documento di specifica sono soltanto esempi. Inserisci le tue tariffe per abilitare i servizi nei preventivi.</p><div class="fields"><label>Carico €/bancale<input id="stcLoadRate" inputmode="decimal" placeholder="Da configurare"></label><label>Scarico €/bancale<input id="stcUnloadRate" inputmode="decimal" placeholder="Da configurare"></label><label>Deposito €/bancale standard/notte<input id="stcStorageRate" inputmode="decimal" placeholder="Da configurare"></label><label>Equivalente €/m²/notte<input id="stcStorageM2Rate" readonly placeholder="Derivato / 0,96"></label></div><p><button class="primary" onclick="STCExtra.saveServiceTariffs()">Salva tariffe dei servizi</button></p></div>
+<div class="card"><h2>Listini fornitori · spedizioni</h2><p class="muted">Listini distinti e storicizzati, senza modificare quello STC esistente. La fascia 50–130 q resta a quotazione manuale finché non sono definite le regole commerciali.</p><div class="fields"><label>Fornitore<input id="stcSupplierName" maxlength="120"></label><label>Zona di riferimento<input id="stcSupplierZone" maxlength="70" placeholder="Es. VR"></label><label>Prezzo €/q (3–50 q)<input id="stcSupplierRate" inputmode="decimal" placeholder="Prezzo concordato"></label><label>Consegna indicativa (giorni)<input id="stcSupplierDays" type="number" min="0" step="1"></label></div><button class="alt" onclick="STCExtra.addSupplier()">Aggiungi listino fornitore</button><div id="stcSupplierList"></div></div>
+ <div class="note">L’amministratore può modificare i prezzi, rinominare le zone e crearne di nuove. Modifica riservata all'amministratore del dispositivo. Le modifiche saranno memorizzate nell'archivio locale cifrato e incluse nel backup. Non si sincronizzano automaticamente sugli altri dispositivi.</div>
+ <div class="card"><div class="row between"><div><h2>Tariffe di trasporto</h2><p class="muted" id="tariffVersionLabel"></p></div><div class="row"><button class="primary" onclick="showAddTariffZone()">+ Nuova zona</button><button class="alt" onclick="exportTariffsJson()">↓ Esporta tariffario</button></div></div>
+  <label>Ricerca regione o zona<input id="tariffFilter" placeholder="Es. Lombardia, BS-MN" oninput="renderTariffs()"></label><div class="tablewrap" id="tariffTable" style="margin-top:14px"></div>
+ </div>
+ <div class="card hidden" id="tariffEditBox"><div class="row between"><h2 id="tariffEditTitle">Modifica zona</h2><button class="alt" onclick="closeTariffEditor()">Chiudi</button></div>
+  <p class="muted">Minimo in euro; tutte le altre fasce in euro per quintale. Valori con massimo due decimali. Non modificare le tariffe senza conferma del listino aziendale.</p>
+  <div class="fields" id="tariffEditFields"></div><label style="margin-top:12px">Motivo della modifica *<input id="tariffReason" maxlength="200" placeholder="Es. aggiornamento listino del ..."></label>
+  <p id="tariffEditError" role="alert" class="muted"></p><button class="primary" id="tariffSaveBtn" onclick="saveTariffEditor()">Salva nuova tariffa</button>
+ </div>
+ <div class="card hidden" id="tariffAddBox"><div class="row between"><h2>Aggiungi zona tariffaria</h2><button class="alt" onclick="document.getElementById('tariffAddBox').classList.add('hidden')">Chiudi</button></div>
+ <p class="muted">Puoi utilizzare una regione esistente oppure crearne una nuova. Ogni nuova zona deve avere un listino completo: nessun prezzo viene inventato.</p>
+ <div class="fields"><label>Regione *<input id="tariffNewRegion" list="tariffNewRegionList" maxlength="55" placeholder="Es. LOMBARDIA"></label><datalist id="tariffNewRegionList"></datalist><label>Zona / province *<input id="tariffNewZone" maxlength="70" placeholder="Es. MI-BG-MB"></label></div>
+ <div class="fields" id="tariffAddFields"></div><label style="margin-top:12px">Motivo della creazione *<input id="tariffNewReason" maxlength="200" placeholder="Nuovo listino aziendale"></label>
+ <p id="tariffAddError" role="alert" class="muted"></p><button class="primary" onclick="saveNewTariffZone()">Crea zona</button>
+</div>
+<div class="card"><h2>Cronologia modifiche</h2><p class="muted">Le modifiche possono essere ripristinate. Esporta sempre il backup prima di apportare variazioni importanti.</p><div id="tariffHistory"></div></div>
+</section>
+<section id="settings" class="view"><h1>Dati e backup</h1><div class="grid"><div class="card span6"><h2>Backup</h2><p class="muted">Esporta un backup JSON cifrato che include utenti e archivio. Conservalo al sicuro fuori dal dispositivo. Ricorda le password.</p><label style="max-width:400px;margin:8px 0">Password di un utente del backup da ripristinare
+     <input type="password" id="backupImportPassword" autocomplete="off" placeholder="Richiesta solo per ripristinare un backup cifrato"></label>
+     <p class="muted">Il backup cifrato viene verificato con questa password <strong>prima</strong> di sostituire il tuo archivio.</p>
+     <div class="row"><button class="primary" onclick="exportBackup()">↓ Esporta backup</button><button class="alt" onclick="document.getElementById('backupFile').click()">↑ Ripristina</button><input class="hidden" type="file" id="backupFile" accept=".json,application/json" onchange="importBackup(this)"></div></div><div class="card span6"><h2>Stato archivio</h2><p id="storageInfo" class="muted">Caricamento…</p><button class="alt" onclick="requestPersist()">Richiedi protezione memoria</button></div><div class="card span12"><h2>Limiti e integrazioni esterne</h2><p class="muted">Autenticazione aziendale sul server, ruoli e permessi, CAP automatici verificati, allegati, versioni tariffario, approvazioni, PDF commerciali dedicati e sincronizzazione con server aziendale. L’archivio è cifrato localmente. La sicurezza centralizzata del server non è ancora disponibile.</p></div></div></section>
+
+<section id="resources" class="view"><h1>Flotta e risorse operative</h1><div class="card"><h2>Nuova risorsa</h2><p class="muted">Una risorsa non è un account di accesso. Puoi disattivarla senza cancellare lo storico.</p><div class="fields"><label>Nome risorsa<input id="stcResourceName" placeholder="Camion 1, Autista X"></label><label>Tipo<select id="stcResourceType"><option value="camion">Camion</option><option value="autista">Autista</option><option value="operatore">Operatore</option><option value="altro">Altro</option></select></label><label>Sponda idraulica<select id="stcResourceLift"><option value="no">No</option><option value="si">Sì</option></select></label><label>Lunghezza cassone m<input id="stcResourceL" inputmode="decimal"></label><label>Larghezza cassone m<input id="stcResourceW" inputmode="decimal"></label><label>Altezza cassone m (facoltativa)<input id="stcResourceH" inputmode="decimal"></label><label>Costo €/km (informativo)<input id="stcResourceKM" inputmode="decimal"></label><label>Note<input id="stcResourceNotes"></label></div><button class="primary" onclick="STCExtra.addResource()">Salva risorsa</button></div><div class="card"><h2>Risorse, attività e assegnazioni</h2><div id="stcResourceList"></div><div class="fields"><label>Periodo statistiche<select id="stcResourcePeriod" onchange="STCExtra.renderResources()"><option value="month">Mese</option><option value="week">Settimana</option><option value="day">Giorno</option></select></label><label>Data di riferimento<input id="stcResourceDay" type="date" onchange="STCExtra.renderResources()"></label></div><div id="stcResourceStats"></div></div></section>
+<section id="analytics" class="view"><h1>Analisi e grafici</h1><div class="note">Preventivato, confermato e fatturato vengono separati. I grafici non sono calcoli di incassi effettivi.</div><div class="card"><label>Cliente<select id="stcAnalyticsClient" onchange="STCExtra.renderAnalytics()"><option value="">Tutti i clienti</option></select></label><label>Servizio<select id="stcAnalyticsService" onchange="STCExtra.renderAnalytics()"><option value="all">Tutti i servizi</option><option value="shipping">Spedizione</option><option value="handling">Carico/scarico</option><option value="storage">Deposito</option></select></label><div class="fields"><label>Zona / Regione (facoltativo)<input id="stcAnalyticsRegion" oninput="STCExtra.renderAnalytics()" placeholder="Es. VENETO, VR"></label><label>Peso minimo kg (facoltativo)<input id="stcAnalyticsWeight" type="number" min="0" oninput="STCExtra.renderAnalytics()" placeholder="Es. 200"></label></div><div id="stcAnalyticsCharts"></div></div></section>
+<section id="admin" class="view"><h1>Amministrazione utenti</h1>
+ <div class="adminBanner"><strong>Accessi locali sul dispositivo.</strong> Le password proteggono il contenuto locale con cifratura AES-GCM. I ruoli dell'interfaccia non costituiscono una barriera affidabile contro utenti con accesso tecnico al dispositivo. Prima dell'uso aziendale multiutente serve il server con autenticazione e permessi verificati lato server.</div>
+ <div class="grid">
+ <div class="card span6"><h2>Crea operatore</h2>
+  <label>Nome e cognome<input id="newUserName" maxlength="70" placeholder="Es. Mario Rossi"></label>
+  <label>Password iniziale (almeno 12 caratteri)<input id="newUserPass" type="password" autocomplete="new-password" minlength="12"></label>
+  <label>Conferma password<input id="newUserPass2" type="password" autocomplete="new-password" minlength="12"></label>
+  <p class="muted">Comunica la password all'operatore con un canale sicuro. Non è memorizzata in chiaro.</p>
+  <button class="primary" onclick="createOperator()">+ Crea operatore</button>
+ </div>
+ <div class="card span6"><h2>Utenti del dispositivo</h2><div id="userList" class="userList"></div></div>
+ <div class="card span12"><h2>Passaggio al server aziendale</h2><p class="muted">Progettazione completata: utenti per azienda, amministratore iniziale, revoca, ruoli, audit e dati segregati. Per renderli vincolanti tra dispositivi serviranno database, backend, sessioni server e sincronizzazione cifrata. Non ancora attivi in questa PWA.</p></div>
+ </div>
+</section>
+</main></div></div>
+<dialog id="calendarDetail" class="calendar-detail" aria-labelledby="calendarDetailTitle" onclick="if(event.target===this)this.close()">
+ <div class="calendar-modal-header"><h2 id="calendarDetailTitle">Dettaglio attività</h2><button class="alt" onclick="document.getElementById('calendarDetail').close()" aria-label="Chiudi dettagli">✕</button></div>
+ <div id="calendarDetailBody"></div>
+ <div class="calendar-modal-footer" id="calendarDetailActions"></div>
+</dialog><div id="mobileMore" class="mobileMore" hidden></div><nav id="mobileNav" class="mobileNav"></nav><div class="toast" id="toast"></div><script src="calc-engine.js"></script><script src="geo-zones.js"></script><script src="security.js"></script><script src="widgets.js"></script><script src="calendar.js"></script><script src="app.js"></script><script src="quick.js"></script><script src="enterprise.js"></script><script src="service-engine.js"></script><script src="stc-extensions.js"></script><script>
+function entLocalDates(){for(const id of ['entEpalDate','entStockDay','entInvoiceDate']){const x=document.getElementById(id);if(x&&!x.value)x.value=date()}};document.addEventListener('DOMContentLoaded',entLocalDates);
+function mobileCloseMore(){const p=document.getElementById('mobileMore');if(p)p.hidden=true}
+function toggleMobileMore(){const p=document.getElementById('mobileMore');p.hidden=!p.hidden;if(!p.hidden)p.innerHTML=stcMobileMoreHTML()}
+</script></body></html>

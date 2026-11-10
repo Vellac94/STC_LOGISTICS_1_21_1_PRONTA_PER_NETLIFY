@@ -1,0 +1,561 @@
+[
+  {
+    "region": "LOMBARDIA",
+    "zone": "BS-MN",
+    "cents": [
+      2985,
+      995,
+      935,
+      875,
+      815,
+      755,
+      700
+    ]
+  },
+  {
+    "region": "LOMBARDIA",
+    "zone": "MI-BG",
+    "cents": [
+      3150,
+      1050,
+      995,
+      935,
+      875,
+      815,
+      755
+    ]
+  },
+  {
+    "region": "LOMBARDIA",
+    "zone": "PV-CR-LO",
+    "cents": [
+      3150,
+      1050,
+      995,
+      935,
+      875,
+      815,
+      755
+    ]
+  },
+  {
+    "region": "LOMBARDIA",
+    "zone": "VA-CO-LC",
+    "cents": [
+      3855,
+      1285,
+      1225,
+      1165,
+      1110,
+      1050,
+      995
+    ]
+  },
+  {
+    "region": "LOMBARDIA",
+    "zone": "SONDRIO",
+    "cents": [
+      4905,
+      1635,
+      1575,
+      1515,
+      1460,
+      1400,
+      1340
+    ]
+  },
+  {
+    "region": "VENETO",
+    "zone": "VR",
+    "cents": [
+      2460,
+      820,
+      760,
+      700,
+      640,
+      585,
+      465
+    ]
+  },
+  {
+    "region": "VENETO",
+    "zone": "PD-VI-RO",
+    "cents": [
+      2985,
+      995,
+      935,
+      875,
+      815,
+      755,
+      700
+    ]
+  },
+  {
+    "region": "VENETO",
+    "zone": "BL-TV-VE",
+    "cents": [
+      3150,
+      1050,
+      995,
+      935,
+      875,
+      815,
+      755
+    ]
+  },
+  {
+    "region": "VENETO",
+    "zone": "VE+ISOLE",
+    "cents": [
+      5955,
+      1985,
+      1925,
+      1865,
+      1810,
+      1750,
+      1690
+    ]
+  },
+  {
+    "region": "PIEMONTE",
+    "zone": "TO-AT-AL",
+    "cents": [
+      4380,
+      1460,
+      1400,
+      1340,
+      1280,
+      1225,
+      1165
+    ]
+  },
+  {
+    "region": "PIEMONTE",
+    "zone": "NO-VC-BI",
+    "cents": [
+      3810,
+      1280,
+      1225,
+      1165,
+      1110,
+      1050,
+      990
+    ]
+  },
+  {
+    "region": "PIEMONTE",
+    "zone": "AO-CN-VB",
+    "cents": [
+      4545,
+      1515,
+      1460,
+      1400,
+      1340,
+      1285,
+      1225
+    ]
+  },
+  {
+    "region": "LIGURIA",
+    "zone": "GE-SP",
+    "cents": [
+      4200,
+      1400,
+      1340,
+      1285,
+      1225,
+      1165,
+      1110
+    ]
+  },
+  {
+    "region": "LIGURIA",
+    "zone": "SV-IM",
+    "cents": [
+      4380,
+      1460,
+      1400,
+      1340,
+      1285,
+      1225,
+      1165
+    ]
+  },
+  {
+    "region": "LIGURIA",
+    "zone": "VENTIMIGLIA",
+    "cents": [
+      4620,
+      1540,
+      1460,
+      1400,
+      1340,
+      1285,
+      1225
+    ]
+  },
+  {
+    "region": "TOSCANA",
+    "zone": "FI-PO-PT",
+    "cents": [
+      3855,
+      1285,
+      1225,
+      1165,
+      1110,
+      1050,
+      995
+    ]
+  },
+  {
+    "region": "TOSCANA",
+    "zone": "LU-PI-AR-MS",
+    "cents": [
+      4035,
+      1345,
+      1285,
+      1225,
+      1165,
+      1110,
+      1050
+    ]
+  },
+  {
+    "region": "TOSCANA",
+    "zone": "SI-LI-GR",
+    "cents": [
+      4560,
+      1520,
+      1460,
+      1400,
+      1345,
+      1283,
+      1225
+    ]
+  },
+  {
+    "region": "TRENTINO ALTO ADIGE",
+    "zone": "TRENTO",
+    "cents": [
+      3495,
+      1165,
+      1110,
+      1050,
+      995,
+      935,
+      875
+    ]
+  },
+  {
+    "region": "TRENTINO ALTO ADIGE",
+    "zone": "VALLI TN",
+    "cents": [
+      3855,
+      1285,
+      1225,
+      1165,
+      1110,
+      1050,
+      995
+    ]
+  },
+  {
+    "region": "TRENTINO ALTO ADIGE",
+    "zone": "BOLZANO",
+    "cents": [
+      4035,
+      1345,
+      1285,
+      1225,
+      1165,
+      1110,
+      1050
+    ]
+  },
+  {
+    "region": "TRENTINO ALTO ADIGE",
+    "zone": "VALLI BZ",
+    "cents": [
+      4200,
+      1400,
+      1345,
+      1285,
+      1225,
+      1165,
+      1110
+    ]
+  },
+  {
+    "region": "FRIULI VENEZIA GIULIA",
+    "zone": "UD-PN-GO",
+    "cents": [
+      4020,
+      1340,
+      1280,
+      1225,
+      1165,
+      1110,
+      1050
+    ]
+  },
+  {
+    "region": "FRIULI VENEZIA GIULIA",
+    "zone": "TS-TARVISIO",
+    "cents": [
+      4200,
+      1400,
+      1340,
+      1280,
+      1225,
+      1165,
+      1010
+    ]
+  },
+  {
+    "region": "LAZIO",
+    "zone": "RM-RI-VT",
+    "cents": [
+      4380,
+      1460,
+      1400,
+      1340,
+      1280,
+      1225,
+      1165
+    ]
+  },
+  {
+    "region": "LAZIO",
+    "zone": "FR-LT",
+    "cents": [
+      4545,
+      1515,
+      1460,
+      1400,
+      1340,
+      1280,
+      1225
+    ]
+  },
+  {
+    "region": "EMILIA ROMAGNA",
+    "zone": "BO-MO-FE",
+    "cents": [
+      3495,
+      1165,
+      1110,
+      1050,
+      995,
+      935,
+      875
+    ]
+  },
+  {
+    "region": "EMILIA ROMAGNA",
+    "zone": "PR-RE-PC",
+    "cents": [
+      3675,
+      1225,
+      1165,
+      1110,
+      1050,
+      995,
+      935
+    ]
+  },
+  {
+    "region": "EMILIA ROMAGNA",
+    "zone": "FC-RA",
+    "cents": [
+      3855,
+      1285,
+      1225,
+      1165,
+      1110,
+      1050,
+      995
+    ]
+  },
+  {
+    "region": "EMILIA ROMAGNA",
+    "zone": "RSM-RN",
+    "cents": [
+      4200,
+      1400,
+      1345,
+      1285,
+      1225,
+      1165,
+      1110
+    ]
+  },
+  {
+    "region": "ABRUZZO/MOLISE",
+    "zone": "PE-CH-TE",
+    "cents": [
+      4545,
+      1515,
+      1460,
+      1400,
+      1340,
+      1280,
+      1225
+    ]
+  },
+  {
+    "region": "ABRUZZO/MOLISE",
+    "zone": "AQ-CB-IS",
+    "cents": [
+      4890,
+      1630,
+      1575,
+      1515,
+      1455,
+      1400,
+      1340
+    ]
+  },
+  {
+    "region": "MARCHE",
+    "zone": "AN-AP-MC-PU",
+    "cents": [
+      4545,
+      1515,
+      1455,
+      1400,
+      1340,
+      1280,
+      1225
+    ]
+  },
+  {
+    "region": "CAMPANIA",
+    "zone": "NA-AV-CE-BN",
+    "cents": [
+      5250,
+      1750,
+      1690,
+      1630,
+      1515,
+      1455,
+      1340
+    ]
+  },
+  {
+    "region": "CAMPANIA",
+    "zone": "SA",
+    "cents": [
+      5595,
+      1865,
+      1805,
+      1750,
+      1690,
+      1630,
+      1515
+    ]
+  },
+  {
+    "region": "PUGLIA",
+    "zone": "BA-FG",
+    "cents": [
+      5595,
+      1865,
+      1805,
+      1750,
+      1690,
+      1630,
+      1515
+    ]
+  },
+  {
+    "region": "PUGLIA",
+    "zone": "LE-TA-BR",
+    "cents": [
+      5775,
+      1925,
+      1865,
+      1805,
+      1750,
+      1690,
+      1630
+    ]
+  },
+  {
+    "region": "SICILIA",
+    "zone": "RE-SR-ME-CT",
+    "cents": [
+      7800,
+      2600,
+      2535,
+      2470,
+      2410,
+      2305,
+      2210
+    ]
+  },
+  {
+    "region": "SICILIA",
+    "zone": "AG-PA-CL- EN-TP",
+    "cents": [
+      8100,
+      2700,
+      2630,
+      2565,
+      2315,
+      2260,
+      2200
+    ]
+  },
+  {
+    "region": "UMBRIA",
+    "zone": "PG-TR",
+    "cents": [
+      4725,
+      1575,
+      1515,
+      1460,
+      1400,
+      1340,
+      1270
+    ]
+  },
+  {
+    "region": "BASILICATA",
+    "zone": "PZ-MT",
+    "cents": [
+      5595,
+      1865,
+      1805,
+      1750,
+      1690,
+      1635,
+      1575
+    ]
+  },
+  {
+    "region": "CALABRIA",
+    "zone": "CS-CZ-RC",
+    "cents": [
+      7800,
+      2600,
+      2535,
+      2470,
+      2410,
+      2350,
+      2290
+    ]
+  },
+  {
+    "region": "SARDEGNA",
+    "zone": "CA-OR-SS-NU",
+    "cents": [
+      7500,
+      2500,
+      2440,
+      2375,
+      2320,
+      2260,
+      2200
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+STC LOGISTICS 1.21.1 — PACCHETTO DI PUBBLICAZIONE
+
+Questo pacchetto contiene l'applicazione MULTIFILE protetta, non la demo HTML.
+L'aggiornamento modifica SOLO testi di presentazione e identificatore cache PWA.
+Non modifica formule, prezzi, tariffe, archivi, schema dati, sicurezza, utenti o pagine gestionali.
+
+PUBBLICAZIONE MANUALE NETLIFY
+1) Prima: entra nel gestionale online e usa Backup > Esporta backup; custodisci il file.
+2) Apri il progetto Netlify esistente: https://app.netlify.com/projects/stc-logistica-vella-test
+3) Deploys/Distribuzioni > carica lo ZIP in un deploy manuale nello STESSO sito.
+   Se l'interfaccia non accetta ZIP: estrai il pacchetto e trascina la cartella contenente index.html.
+4) Riapri https://stc-logistica-vella-test.netlify.app/ online.
+5) Verifica login con un account esistente, preventivi storici, calcolatrice, archivio e backup.
+6) NON eliminare dati del browser o disinstallare la PWA prima di aver verificato il backup.
+
+LIMITAZIONI IMPORTANTI
+- Ogni browser/dispositivo ha un archivio locale proprio, nessuna sincronizzazione aziendale.
+- I ruoli locali non sono permessi protetti da un server; non adatto a isolare dati tra utenti tecnicamente ostili.
+- Posta: importazione .eml, non ricezione in tempo reale.
+- Fatture: bozze interne, non invio allo SdI.
+- I tariffari commerciali e condizioni non configurate non diventano automaticamente attive.
+- Il provider meteo usato in precedenza va verificato per utilizzo commerciale.
+- Non dichiarare pieno collaudo aziendale prima delle prove su account e dispositivi reali.
+
+In caso di problemi: usare il rollback Netlify a una distribuzione precedente; NON cancellare l'archivio del browser.
