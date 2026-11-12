@@ -1,0 +1,64 @@
+name: Archivio prezzi SQLite
+
+on:
+  pull_request:
+    paths:
+      - 'tariffs.json'
+      - 'app.js'
+      - 'sw.js'
+      - 'calc-engine.js'
+      - 'tools/**'
+      - 'tests/**'
+      - '.github/workflows/tariffs.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tariffs.json'
+      - 'tools/**'
+      - 'tests/**'
+      - '.github/workflows/tariffs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tariffs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verifica importazione e controlli dei prezzi
+        run: python -m unittest discover -s tests -v
+      - name: Genera SQLite e aggiorna i dati del gestionale
+        run: python tools/build_tariffs.py
+      - name: Verifica tutti i calcoli e la corrispondenza con la vista
+        run: node tests/tariff-calculations.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: listino-sqlite
+          path: |
+            build/listino.sqlite
+            build/tariffs.json
+          if-no-files-found: error
+      - name: Salva automaticamente la vista generata su main
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          git add app.js sw.js
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Aggiorna vista tariffaria dal listino SQLite"
+            git push origin HEAD:main
+          fi
