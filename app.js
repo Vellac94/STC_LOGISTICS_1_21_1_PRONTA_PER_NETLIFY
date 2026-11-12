@@ -522,7 +522,7 @@ function applySavedTariffs(){
   // La nuova etichetta mantiene la vecchia sigla come alias per bozze/preventivi esistenti.
   const desired=names[tariffKey(t)]||(t.zone==='MI-BG'&&t.region==='LOMBARDIA'?'MI-BG-MB':t.zone);
   try{t.zone=zoneLabelValid(desired)}catch(e){/* Ignora nomi corrotti nel backup */}
-  t.aliases=[...new Set([t.originalZone,...(allAliases[tariffKey(t)]||[])])];
+  t.aliases=[...new Set([t.originalZone,...(t.aliases||[]),...(allAliases[tariffKey(t)]||[])])];
  }
  for(const d of state.tariffCustomZones||[]){if(!d||typeof d.region!=='string'||typeof d.zone!=='string'||!Array.isArray(d.cents)||d.cents.length!==7||!d.cents.every(v=>Number.isSafeInteger(v)&&v>=0&&v<=100000000))continue;
   if(zoneConflict(d.region,d.zone))continue;
