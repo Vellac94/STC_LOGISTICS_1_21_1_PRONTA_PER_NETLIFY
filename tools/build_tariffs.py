@@ -68,9 +68,9 @@ def create_database(connection, rows):
             position INTEGER NOT NULL UNIQUE,
             region TEXT NOT NULL,
             zone TEXT NOT NULL,
-            supplement_cents INTEGER CHECK(
+            supplement_cents INTEGER CHECK(supplement_cents IS NULL OR (
                 typeof(supplement_cents) = 'integer'
-                AND supplement_cents BETWEEN 0 AND 100000000),
+                AND supplement_cents BETWEEN 0 AND 100000000)),
             aliases_present INTEGER NOT NULL CHECK(aliases_present IN (0, 1)),
             UNIQUE(region, zone)
         );
